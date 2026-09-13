@@ -8,10 +8,12 @@ struct StandLockApp: App {
 
     var body: some Scene {
         MenuBarExtra {
-            MenuBarView()
-                .environmentObject(appCoordinator)
-                .environmentObject(appCoordinator.permissionChecker)
-                .environmentObject(appDelegate.updateObserver)
+            LocalizedRoot(store: appCoordinator.languageStore) {
+                MenuBarView()
+                    .environmentObject(appCoordinator)
+                    .environmentObject(appCoordinator.permissionChecker)
+                    .environmentObject(appDelegate.updateObserver)
+            }
         } label: {
             Image(nsImage: MenuBarIcon.make(progress: appCoordinator.breakProgress))
             if let timerText = appCoordinator.menuBarTimerText {
@@ -22,9 +24,11 @@ struct StandLockApp: App {
         .menuBarExtraStyle(.window)
 
         Settings {
-            SettingsView(selectedTab: $appCoordinator.selectedSettingsTab, updater: appDelegate.updaterController.updater)
-                .environmentObject(appCoordinator)
-                .environmentObject(appCoordinator.permissionChecker)
+            LocalizedRoot(store: appCoordinator.languageStore) {
+                SettingsView(selectedTab: $appCoordinator.selectedSettingsTab, updater: appDelegate.updaterController.updater)
+                    .environmentObject(appCoordinator)
+                    .environmentObject(appCoordinator.permissionChecker)
+            }
         }
         .commands {
             CommandGroup(after: .appInfo) {

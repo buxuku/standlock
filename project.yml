@@ -20,6 +20,11 @@ settings:
     # before a release.
     MARKETING_VERSION: "0.3.0"
     CURRENT_PROJECT_VERSION: "16"
+    # String Catalog extraction. GENERATE_SYMBOLS stays NO: the catalog holds
+    # roughly 80 manually-added sentence keys that would each become a symbol.
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: NO
 
 packages:
   StandLockKit:

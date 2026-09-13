@@ -47,7 +47,7 @@ extension DisciplineLevel {
                 EnforcementTier(skipDelay: base, dismissMechanism: .typePhrase(phrase: phrase, requiresConfirmation: false)),
                 EnforcementTier(skipDelay: base + 5, dismissMechanism: .typePhrase(phrase: phrase, requiresConfirmation: false)),
                 EnforcementTier(skipDelay: base + 10, dismissMechanism: .slotMachine(reelCount: 3, maxAttempts: 3)),
-                EnforcementTier(skipDelay: base + 15, dismissMechanism: .typePhrase(phrase: phrase + " I really mean it", requiresConfirmation: true)),
+                EnforcementTier(skipDelay: base + 15, dismissMechanism: .typePhrase(phrase: phrase, requiresConfirmation: true)),
                 EnforcementTier(skipDelay: base + 20, dismissMechanism: .roastChallenge(sentenceCount: 3)),
             ])
         case .strict:

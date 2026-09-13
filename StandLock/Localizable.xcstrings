@@ -1,0 +1,3831 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "   ·   " : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "   ·   "
+          }
+        }
+      }
+    },
+    " · " : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : " · "
+          }
+        }
+      }
+    },
+    ":" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ":"
+          }
+        }
+      }
+    },
+    "·" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "·"
+          }
+        }
+      }
+    },
+    "%@ I really mean it" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ve gerçekten ciddiyim"
+          }
+        }
+      }
+    },
+    "%@ Permission Granted" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ İzni Verildi"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "%lld completed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld tamamlandı"
+          }
+        }
+      }
+    },
+    "%lld days with breaks" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günde mola verildi"
+          }
+        }
+      }
+    },
+    "%lld in a row" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "üst üste %lld"
+          }
+        }
+      }
+    },
+    "%lld skipped today" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bugün %lld atlandı"
+          }
+        }
+      }
+    },
+    "%lld skips per day before breaks stop being dismissible" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günde %lld atlamadan sonra molalar kapatılamaz olur"
+          }
+        }
+      }
+    },
+    "%llds" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sn"
+          }
+        }
+      }
+    },
+    "•" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "•"
+          }
+        }
+      }
+    },
+    "© 2026 Yılmaz Yağız Dokumacı. MIT License." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2026 Yılmaz Yağız Dokumacı. MIT Lisansı."
+          }
+        }
+      }
+    },
+    "× %llds" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "× %lld sn"
+          }
+        }
+      }
+    },
+    "⌘," : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⌘,"
+          }
+        }
+      }
+    },
+    "⌘Q" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⌘Q"
+          }
+        }
+      }
+    },
+    "✕" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "✕"
+          }
+        }
+      }
+    },
+    "1 hour" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 saat"
+          }
+        }
+      }
+    },
+    "1 min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 dk"
+          }
+        }
+      }
+    },
+    "2 hours" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 saat"
+          }
+        }
+      }
+    },
+    "2 min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2 dk"
+          }
+        }
+      }
+    },
+    "3 min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 dk"
+          }
+        }
+      }
+    },
+    "5 min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 dk"
+          }
+        }
+      }
+    },
+    "5 minute breaks" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 dakikalık molalar"
+          }
+        }
+      }
+    },
+    "09:00 – 17:00" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "09:00 – 17:00"
+          }
+        }
+      }
+    },
+    "20-20-20 Rule" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20-20-20 Kuralı"
+          }
+        }
+      }
+    },
+    "30 minutes" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30 dakika"
+          }
+        }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hakkında"
+          }
+        }
+      }
+    },
+    "About StandLock" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "StandLock Hakkında"
+          }
+        }
+      }
+    },
+    "Accessibility" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erişilebilirlik"
+          }
+        }
+      }
+    },
+    "Active Days" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkin Günler"
+          }
+        }
+      }
+    },
+    "Add a schedule to start taking breaks." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola vermeye başlamak için bir program ekleyin."
+          }
+        }
+      }
+    },
+    "Add Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Program Ekle"
+          }
+        }
+      }
+    },
+    "After sharing ends" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paylaşım bittikten sonra"
+          }
+        }
+      }
+    },
+    "All day" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm gün"
+          }
+        }
+      }
+    },
+    "Always display remaining time next to the icon" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalan süreyi simgenin yanında hep göster"
+          }
+        }
+      }
+    },
+    "Are you sure about that?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bundan emin misiniz?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete \"%@\"?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" silinsin mi?"
+          }
+        }
+      }
+    },
+    "Arm Circles" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kol Çevirme"
+          }
+        }
+      }
+    },
+    "Automatic Updates" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otomatik Güncellemeler"
+          }
+        }
+      }
+    },
+    "Behavior" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Davranış"
+          }
+        }
+      }
+    },
+    "Best Streak" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En İyi Seri"
+          }
+        }
+      }
+    },
+    "Better luck next time!" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir dahakine bol şans!"
+          }
+        }
+      }
+    },
+    "Bold of you to try again" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden denemeniz cesurca"
+          }
+        }
+      }
+    },
+    "Boring. Type another one." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıkıcı. Bir tane daha yazın."
+          }
+        }
+      }
+    },
+    "Box Breathing" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kare Nefes"
+          }
+        }
+      }
+    },
+    "Break Activity" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola Etkinliği"
+          }
+        }
+      }
+    },
+    "Break duration" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola süresi"
+          }
+        }
+      }
+    },
+    "Break every" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola sıklığı"
+          }
+        }
+      }
+    },
+    "Break every 45 minutes" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "45 dakikada bir mola"
+          }
+        }
+      }
+    },
+    "Break in progress" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola sürüyor"
+          }
+        }
+      }
+    },
+    "Break Statistics" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola İstatistikleri"
+          }
+        }
+      }
+    },
+    "Break Time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola Süresi"
+          }
+        }
+      }
+    },
+    "Break waiting" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola bekliyor"
+          }
+        }
+      }
+    },
+    "Breaks" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molalar"
+          }
+        }
+      }
+    },
+    "Breaks cycle through these intervals in order." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molalar bu aralıkları sırayla döner."
+          }
+        }
+      }
+    },
+    "Breathe in for 4 seconds, hold for 4 seconds, breathe out for 4 seconds, hold for 4 seconds. Repeat 3 times." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "4 saniye nefes alın, 4 saniye tutun, 4 saniye verin, 4 saniye bekleyin. 3 kez tekrarlayın."
+          }
+        }
+      }
+    },
+    "Brief pause. Big difference." : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kısa bir ara. Büyük fark."
+          }
+        }
+      }
+    },
+    "Calendar" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim"
+          }
+        }
+      }
+    },
+    "Calendar Access" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim Erişimi"
+          }
+        }
+      }
+    },
+    "Calendar event active" : {
+      "comment" : "DeferralReason.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim etkinliği sürüyor"
+          }
+        }
+      }
+    },
+    "Calendar Integration" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim Entegrasyonu"
+          }
+        }
+      }
+    },
+    "Calendar Integration requires calendar access. Grant it in System Settings to enable this feature." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim Entegrasyonu takvim erişimi gerektirir. Bu özelliği açmak için Sistem Ayarları'ndan izin verin."
+          }
+        }
+      }
+    },
+    "Calendar Permission Required" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim İzni Gerekli"
+          }
+        }
+      }
+    },
+    "Calf Raises" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parmak Ucu Yükselme"
+          }
+        }
+      }
+    },
+    "Camera Detection" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera Algılama"
+          }
+        }
+      }
+    },
+    "Camera in use" : {
+      "comment" : "DeferralReason.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera kullanımda"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vazgeç"
+          }
+        }
+      }
+    },
+    "Check for Updates…" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellemeleri Denetle…"
+          }
+        }
+      }
+    },
+    "Chest Opener" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Göğüs Açma"
+          }
+        }
+      }
+    },
+    "Clasp your hands behind your back, straighten your arms, and lift them slightly while opening your chest." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ellerinizi arkanızda kenetleyin, kollarınızı düzleştirin ve göğsünüzü açarak hafifçe kaldırın."
+          }
+        }
+      }
+    },
+    "Close your eyes gently and relax. Let your eye muscles rest completely for 20 seconds." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gözlerinizi hafifçe kapatıp gevşeyin. Göz kaslarınız 20 saniye tamamen dinlensin."
+          }
+        }
+      }
+    },
+    "Completed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamamlanan"
+          }
+        }
+      }
+    },
+    "Completion" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamamlanma"
+          }
+        }
+      }
+    },
+    "Consecutive skip detected" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Art arda atlama saptandı"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devam"
+          }
+        }
+      }
+    },
+    "Could not relaunch StandLock. Please reopen the app manually." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "StandLock yeniden başlatılamadı. Lütfen uygulamayı elle yeniden açın."
+          }
+        }
+      }
+    },
+    "Count inactivity as a break taken" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hareketsizliği alınmış mola say"
+          }
+        }
+      }
+    },
+    "Countdown Start" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri Sayım Başlangıcı"
+          }
+        }
+      }
+    },
+    "Ctrl+Z won't fix your posture" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ctrl+Z duruşunuzu düzeltmez"
+          }
+        }
+      }
+    },
+    "Custom" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özel"
+          }
+        }
+      }
+    },
+    "Daily skip limit reached" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük atlama sınırına ulaşıldı"
+          }
+        }
+      }
+    },
+    "Deep Breathing" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Derin Nefes"
+          }
+        }
+      }
+    },
+    "Defer break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molayı ertele"
+          }
+        }
+      }
+    },
+    "Defer breaks during calendar events" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim etkinliklerinde molaları ertele"
+          }
+        }
+      }
+    },
+    "Defer breaks during calendar events." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Takvim etkinliklerinde molaları erteler."
+          }
+        }
+      }
+    },
+    "Defer breaks during screen sharing or recording" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran paylaşımı veya kaydı sırasında molaları ertele"
+          }
+        }
+      }
+    },
+    "Defer breaks when camera is active (video calls)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamera etkinken molaları ertele (görüntülü görüşmeler)"
+          }
+        }
+      }
+    },
+    "Defer breaks when microphone is active (audio calls)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon etkinken molaları ertele (sesli görüşmeler)"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
+          }
+        }
+      }
+    },
+    "Delete Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programı Sil"
+          }
+        }
+      }
+    },
+    "Detection" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algılama"
+          }
+        }
+      }
+    },
+    "Discipline" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disiplin"
+          }
+        }
+      }
+    },
+    "Discipline Level" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disiplin Seviyesi"
+          }
+        }
+      }
+    },
+    "Do 10 slow bodyweight squats. Keep your back straight and knees behind your toes." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 yavaş vücut ağırlığı squat yapın. Sırtınızı düz, dizlerinizi parmak uçlarınızın gerisinde tutun."
+          }
+        }
+      }
+    },
+    "Double or nothing... well, nothing or nothing" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ya hep ya hiç... yani hiç ya da hiç"
+          }
+        }
+      }
+    },
+    "e.g. 3 short breaks, then 1 long break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "örn. 3 kısa mola, sonra 1 uzun mola"
+          }
+        }
+      }
+    },
+    "e.g. Work Hours" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "örn. Çalışma Saatleri"
+          }
+        }
+      }
+    },
+    "Each permission unlocks a feature. You can grant them now or later in Settings." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her izin bir özelliği açar. Şimdi ya da sonra Ayarlar'dan izin verebilirsiniz."
+          }
+        }
+      }
+    },
+    "Edit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düzenle"
+          }
+        }
+      }
+    },
+    "Edit Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programı Düzenle"
+          }
+        }
+      }
+    },
+    "Emergency" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acil Durum"
+          }
+        }
+      }
+    },
+    "Emergency exits this week" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu haftaki acil çıkışlar"
+          }
+        }
+      }
+    },
+    "Enables Strict mode to fully block input during breaks." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı modun molalarda girdiyi tümüyle engellemesini sağlar."
+          }
+        }
+      }
+    },
+    "Enables Strict mode to fully block keyboard and mouse input." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı modun klavye ve fare girdisini tümüyle engellemesini sağlar."
+          }
+        }
+      }
+    },
+    "Enables the escape key combo that ends a Strict break." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı molayı bitiren çıkış tuş birleşimini etkinleştirir."
+          }
+        }
+      }
+    },
+    "End" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitiş"
+          }
+        }
+      }
+    },
+    "Even a coin flip would work now" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artık yazı tura bile iş görürdü"
+          }
+        }
+      }
+    },
+    "Even CPUs need cooling breaks" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İşlemciler bile soğuma molası ister"
+          }
+        }
+      }
+    },
+    "every %@m" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "her %@dk"
+          }
+        }
+      }
+    },
+    "Every day" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her gün"
+          }
+        }
+      }
+    },
+    "Every Day" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her Gün"
+          }
+        }
+      }
+    },
+    "Exercise? I thought you said extra fries" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egzersiz mi? Ben ekstra patates sandım"
+          }
+        }
+      }
+    },
+    "Extend your arms and rotate your wrists in circles, 10 times in each direction." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kollarınızı uzatıp bileklerinizi her yöne 10 kez çevirin."
+          }
+        }
+      }
+    },
+    "Extend your arms to the sides and make small circles, gradually increasing size. 10 forward, 10 backward." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kollarınızı yana açıp giderek büyüyen küçük daireler çizin. 10 ileri, 10 geri."
+          }
+        }
+      }
+    },
+    "Eye Rest" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Göz Dinlendirme"
+          }
+        }
+      }
+    },
+    "Failed to update login item: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açılış öğesi güncellenemedi: %@"
+          }
+        }
+      }
+    },
+    "Feeling lucky?" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şanslı hissediyor musunuz?"
+          }
+        }
+      }
+    },
+    "Fewer buttons, still lost?" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düğme azaldı, hâlâ bulamadınız mı?"
+          }
+        }
+      }
+    },
+    "Find the right button to skip" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atlamak için doğru düğmeyi bulun"
+          }
+        }
+      }
+    },
+    "Fine, go →" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peki, git →"
+          }
+        }
+      }
+    },
+    "Fine. Just type this:" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peki. Sadece şunu yazın:"
+          }
+        }
+      }
+    },
+    "Fine. Last spin." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peki. Son çevirme."
+          }
+        }
+      }
+    },
+    "Fine. You're even more hopeless than I thought. Take your skip." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peki. Sandığımdan da umutsuzsunuz. Atlamanız sizin olsun."
+          }
+        }
+      }
+    },
+    "Finger Stretches" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parmak Esnetme"
+          }
+        }
+      }
+    },
+    "Firm" : {
+      "comment" : "DisciplineLevel.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıkı"
+          }
+        }
+      }
+    },
+    "Firm Daily Skip Limit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıkı Günlük Atlama Sınırı"
+          }
+        }
+      }
+    },
+    "for %lld seconds to exit." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tuşlarını %lld saniye basılı tutun."
+          }
+        }
+      }
+    },
+    "Full input blocking with emergency escape combo" : {
+      "comment" : "DisciplineLevel.description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm girişi engeller, acil çıkış tuş birleşimi vardır"
+          }
+        }
+      }
+    },
+    "Full-screen overlay with immediate skip button" : {
+      "comment" : "DisciplineLevel.description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam ekran kaplama ve anında atlama düğmesi"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genel"
+          }
+        }
+      }
+    },
+    "Gentle" : {
+      "comment" : "DisciplineLevel.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esnek"
+          }
+        }
+      }
+    },
+    "Gentle Daily Skip Limit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esnek Günlük Atlama Sınırı"
+          }
+        }
+      }
+    },
+    "Gentle mode" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esnek mod"
+          }
+        }
+      }
+    },
+    "Genuinely impressive" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerçekten etkileyici"
+          }
+        }
+      }
+    },
+    "Genuinely impressive. Fine, go." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerçekten etkileyici. Peki, git."
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başla"
+          }
+        }
+      }
+    },
+    "git commit -m \"touched grass\"" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "git commit -m \"çimene dokundum\""
+          }
+        }
+      }
+    },
+    "GitHub" : {
+      "comment" : "Label text for a link to the StandLock GitHub repository.",
+      "isCommentAutoGenerated" : true
+    },
+    "Go touch some grass" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Git biraz çimene dokun"
+          }
+        }
+      }
+    },
+    "Grant" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İzin Ver"
+          }
+        }
+      }
+    },
+    "Grant permissions that match your usage. StandLock works without any of them." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanımınıza uyan izinleri verin. StandLock hiçbiri olmadan da çalışır."
+          }
+        }
+      }
+    },
+    "Hamstring Stretch" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arka Bacak Esnetme"
+          }
+        }
+      }
+    },
+    "Have you tried turning yourself off and on?" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kendinizi kapatıp açmayı denediniz mi?"
+          }
+        }
+      }
+    },
+    "Hip Circles" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalça Çevirme"
+          }
+        }
+      }
+    },
+    "Hold" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkmak için"
+          }
+        }
+      }
+    },
+    "I already knew that. Next." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunu zaten biliyordum. Sıradaki."
+          }
+        }
+      }
+    },
+    "I choose early back pain over a short walk" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kısa bir yürüyüş yerine erken sırt ağrısını seçiyorum"
+          }
+        }
+      }
+    },
+    "I choose to skip this break" : {
+      "comment" : "Default escape phrase",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu molayı atlamayı seçiyorum"
+          }
+        }
+      }
+    },
+    "I consider sitting a competitive sport" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oturmayı rekabetçi bir spor sayıyorum"
+          }
+        }
+      }
+    },
+    "I prefer sitting anyway" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaten oturmayı tercih ederim"
+          }
+        }
+      }
+    },
+    "I skipped leg day and every other day too" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacak gününü atladım, diğer günleri de"
+          }
+        }
+      }
+    },
+    "I solemnly swear to take every single break from now until the end of time itself" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bundan sonra zamanın sonuna dek her molayı vereceğime yemin ederim"
+          }
+        }
+      }
+    },
+    "I treat health advice as gentle suggestions" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sağlık önerilerini nazik tavsiyeler sayıyorum"
+          }
+        }
+      }
+    },
+    "I treat my legs like decorative furniture" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacaklarıma dekoratif mobilya gibi davranıyorum"
+          }
+        }
+      }
+    },
+    "I'd rather humiliate myself than take a break" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola vermektense kendimi rezil etmeyi yeğlerim"
+          }
+        }
+      }
+    },
+    "I'll configure later" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonra yapılandıracağım"
+          }
+        }
+      }
+    },
+    "I'm allergic to standing up" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayağa kalkmaya alerjim var"
+          }
+        }
+      }
+    },
+    "I'm in this picture and I don't like it" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu fotoğraftayım ve hoşuma gitmiyor"
+          }
+        }
+      }
+    },
+    "I'm out of insults. Skip granted, you absolute legend." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lafım kalmadı. Atlama sizindir, tam bir efsanesiniz."
+          }
+        }
+      }
+    },
+    "I'm too lazy to stand for thirty seconds" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otuz saniye ayakta duramayacak kadar tembelim"
+          }
+        }
+      }
+    },
+    "Idle as Break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boşta Kalmayı Mola Say"
+          }
+        }
+      }
+    },
+    "If stairs are nearby, walk up and down one flight. A quick burst of activity boosts energy." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakınında merdiven varsa bir kat inip çıkın. Kısa bir hareket enerjinizi yükseltir."
+          }
+        }
+      }
+    },
+    "Ignore" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yoksay"
+          }
+        }
+      }
+    },
+    "Impressive. Not a single one." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkileyici. Bir tane bile yok."
+          }
+        }
+      }
+    },
+    "Input Monitoring" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Girdi İzleme"
+          }
+        }
+      }
+    },
+    "It works on my spine" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benim omurgamda çalışıyor"
+          }
+        }
+      }
+    },
+    "It's literally 50/50 now" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artık tam anlamıyla 50/50"
+          }
+        }
+      }
+    },
+    "Jackpot. Ugh." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jackpot. Of."
+          }
+        }
+      }
+    },
+    "Label (optional, e.g. Sitting)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiket (isteğe bağlı, örn. Oturma)"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil"
+          }
+        }
+      }
+    },
+    "Last chance. No pressure." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son şans. Baskı yok."
+          }
+        }
+      }
+    },
+    "Last one. Make it count." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonuncu. İyi değerlendirin."
+          }
+        }
+      }
+    },
+    "Later" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha Sonra"
+          }
+        }
+      }
+    },
+    "Launch at Startup" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açılışta Başlat"
+          }
+        }
+      }
+    },
+    "Less" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az"
+          }
+        }
+      }
+    },
+    "LGTM. Now stand up." : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LGTM. Şimdi ayağa kalkın."
+          }
+        }
+      }
+    },
+    "LOCK" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LOCK"
+          }
+        }
+      }
+    },
+    "Long break: %lldm" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzun mola: %lld dk"
+          }
+        }
+      }
+    },
+    "Look at something 20 feet away for 20 seconds. This reduces digital eye strain significantly." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "20 saniye boyunca 6 metre uzaktaki bir şeye bakın. Bu, dijital göz yorgunluğunu belirgin biçimde azaltır."
+          }
+        }
+      }
+    },
+    "Look-ahead: %lld min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İleri bakış: %lld dk"
+          }
+        }
+      }
+    },
+    "m" : {
+      "comment" : "Menu bar timer minute suffix",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dk"
+          }
+        }
+      }
+    },
+    "Make breaks harder to skip over time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molaları zamanla atlaması zorlaştır"
+          }
+        }
+      }
+    },
+    "Makes each skipped break harder to dismiss" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atlanan her molayı kapatması daha zor hale getirir"
+          }
+        }
+      }
+    },
+    "Maybe standing up is easier than this" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belki ayağa kalkmak bundan kolaydır"
+          }
+        }
+      }
+    },
+    "Media & Idle" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medya ve Boşta"
+          }
+        }
+      }
+    },
+    "Menu Bar Display" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü Çubuğu Görünümü"
+          }
+        }
+      }
+    },
+    "Microphone Detection" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon Algılama"
+          }
+        }
+      }
+    },
+    "Microphone in use" : {
+      "comment" : "DeferralReason.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mikrofon kullanımda"
+          }
+        }
+      }
+    },
+    "min" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dk"
+          }
+        }
+      }
+    },
+    "Monday – Friday" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pazartesi – Cuma"
+          }
+        }
+      }
+    },
+    "Month" : {
+      "comment" : "StatsPeriod raw value",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ay"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çok"
+          }
+        }
+      }
+    },
+    "Most of these are red. Just saying." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunların çoğu kırmızı. Söylemiş olayım."
+          }
+        }
+      }
+    },
+    "My chair and I are in a committed relationship" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sandalyemle ciddi bir ilişkimiz var"
+          }
+        }
+      }
+    },
+    "My doctor would be so disappointed right now" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doktorum şu an çok hayal kırıklığına uğrardı"
+          }
+        }
+      }
+    },
+    "My legs are decorative" : {
+      "comment" : "Gentle tier escape phrase",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacaklarım dekoratif"
+          }
+        }
+      }
+    },
+    "My legs forgot their purpose" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacaklarım ne işe yaradığını unuttu"
+          }
+        }
+      }
+    },
+    "My posture is a cry for help" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duruşum bir yardım çığlığı"
+          }
+        }
+      }
+    },
+    "My spine filed a complaint but I ignored it" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omurgam şikâyet etti ama ben kulak asmadım"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ad"
+          }
+        }
+      }
+    },
+    "Neck Circles" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boyun Çevirme"
+          }
+        }
+      }
+    },
+    "Never gonna give you up" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never gonna give you up"
+          }
+        }
+      }
+    },
+    "New Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Program"
+          }
+        }
+      }
+    },
+    "Next break %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonraki mola %@"
+          }
+        }
+      }
+    },
+    "NEXT: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SIRADAKİ: %@"
+          }
+        }
+      }
+    },
+    "No active schedules" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkin program yok"
+          }
+        }
+      }
+    },
+    "No Schedules" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Program Yok"
+          }
+        }
+      }
+    },
+    "No schedules configured" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yapılandırılmış program yok"
+          }
+        }
+      }
+    },
+    "Not done yet." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daha bitmedi."
+          }
+        }
+      }
+    },
+    "Okay okay, you win. Or lose. Depends on perspective." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam tamam, kazandınız. Ya da kaybettiniz. Bakış açısına göre değişir."
+          }
+        }
+      }
+    },
+    "One does not simply skip breaks" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molalar öylece atlanmaz"
+          }
+        }
+      }
+    },
+    "One of these actually works..." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunlardan biri gerçekten çalışıyor..."
+          }
+        }
+      }
+    },
+    "One reel. One button. No excuses." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tek makara. Tek düğme. Bahane yok."
+          }
+        }
+      }
+    },
+    "Open Settings" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarları Aç"
+          }
+        }
+      }
+    },
+    "Open StandLock when you log in" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oturum açtığınızda StandLock'u başlat"
+          }
+        }
+      }
+    },
+    "Open System Settings" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistem Ayarları'nı Aç"
+          }
+        }
+      }
+    },
+    "Overhead Stretch" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yukarı Uzanma"
+          }
+        }
+      }
+    },
+    "Overlay with delayed skip and phrase-to-escape" : {
+      "comment" : "DisciplineLevel.description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gecikmeli atlama ve çıkış için cümle yazma"
+          }
+        }
+      }
+    },
+    "Pause audio playback when a break starts" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mola başlayınca ses çalmayı duraklat"
+          }
+        }
+      }
+    },
+    "Pause Media" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medyayı Duraklat"
+          }
+        }
+      }
+    },
+    "Pause Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programı Duraklat"
+          }
+        }
+      }
+    },
+    "Paused" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duraklatıldı"
+          }
+        }
+      }
+    },
+    "Paused until %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kadar duraklatıldı"
+          }
+        }
+      }
+    },
+    "Period" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dönem"
+          }
+        }
+      }
+    },
+    "Permission Required" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İzin Gerekli"
+          }
+        }
+      }
+    },
+    "Permissions" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İzinler"
+          }
+        }
+      }
+    },
+    "Place one foot on a low surface, keep your leg straight, and lean forward. Hold 15 seconds each side." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir ayağınızı alçak bir yüzeye koyun, bacağınızı düz tutup öne eğilin. Her iki tarafta 15 saniye bekleyin."
+          }
+        }
+      }
+    },
+    "Place your hands on your hips and rotate them in wide circles. 10 clockwise, 10 counterclockwise." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ellerinizi kalçanıza koyup geniş daireler çizin. 10 saat yönünde, 10 tersine."
+          }
+        }
+      }
+    },
+    "Posture Check" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duruş Kontrolü"
+          }
+        }
+      }
+    },
+    "Progressive Enforcement" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kademeli Zorlama"
+          }
+        }
+      }
+    },
+    "Quad Stretch" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ön Bacak Esnetme"
+          }
+        }
+      }
+    },
+    "Quick Setup" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hızlı Kurulum"
+          }
+        }
+      }
+    },
+    "Quit StandLock" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "StandLock'tan Çık"
+          }
+        }
+      }
+    },
+    "Raise both arms overhead, interlace your fingers, and stretch upward. Hold for 15 seconds." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İki kolunuzu başınızın üstüne kaldırın, parmaklarınızı kenetleyip yukarı uzanın. 15 saniye bekleyin."
+          }
+        }
+      }
+    },
+    "Raise one arm overhead and lean to the opposite side. Hold for 10 seconds, then switch sides." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir kolunuzu yukarı kaldırıp karşı tarafa eğilin. 10 saniye bekleyin, sonra taraf değiştirin."
+          }
+        }
+      }
+    },
+    "Raise your shoulders up toward your ears, hold for 3 seconds, then release. Repeat 10 times." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omuzlarınızı kulaklarınıza doğru kaldırın, 3 saniye tutun, sonra bırakın. 10 kez tekrarlayın."
+          }
+        }
+      }
+    },
+    "Reduce to Gentle" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esnek'e düşür"
+          }
+        }
+      }
+    },
+    "Reels are a bit slower now. You're welcome." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Makaralar biraz yavaşladı. Rica ederim."
+          }
+        }
+      }
+    },
+    "Repetition Cycle" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekrar Döngüsü"
+          }
+        }
+      }
+    },
+    "Restart" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden Başlat"
+          }
+        }
+      }
+    },
+    "Restart Failed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden Başlatma Başarısız"
+          }
+        }
+      }
+    },
+    "Restart Now" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi Yeniden Başlat"
+          }
+        }
+      }
+    },
+    "Resume Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programı Sürdür"
+          }
+        }
+      }
+    },
+    "Roll your shoulders forward 10 times, then backward 10 times. Keep movements slow and controlled." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omuzlarınızı 10 kez öne, sonra 10 kez arkaya çevirin. Hareketleri yavaş ve kontrollü tutun."
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaydet"
+          }
+        }
+      }
+    },
+    "Saw that coming" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunu görmüştüm"
+          }
+        }
+      }
+    },
+    "Schedules" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Programlar"
+          }
+        }
+      }
+    },
+    "Screen Sharing" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran Paylaşımı"
+          }
+        }
+      }
+    },
+    "Screen sharing active" : {
+      "comment" : "DeferralReason.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran paylaşımı sürüyor"
+          }
+        }
+      }
+    },
+    "Screen time: hours. Break time: refused." : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekran süresi: saatler. Mola süresi: reddedildi."
+          }
+        }
+      }
+    },
+    "Settings..." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar..."
+          }
+        }
+      }
+    },
+    "Short breaks: %lld" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kısa mola sayısı: %lld"
+          }
+        }
+      }
+    },
+    "Short: %lldm" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kısa: %lld dk"
+          }
+        }
+      }
+    },
+    "Shoulder Rolls" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omuz Çevirme"
+          }
+        }
+      }
+    },
+    "Shoulder Shrugs" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omuz Silkme"
+          }
+        }
+      }
+    },
+    "Show Full Work Timer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam Çalışma Sayacını Göster"
+          }
+        }
+      }
+    },
+    "Show timer in the last minutes before break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molaya son dakikalarda sayacı göster"
+          }
+        }
+      }
+    },
+    "Side Stretch" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yana Esnetme"
+          }
+        }
+      }
+    },
+    "Sit or stand, place one hand on the opposite knee, and gently twist your torso. Hold 10 seconds each side." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oturun ya da ayakta durun, bir elinizi karşı dizinize koyup gövdenizi nazikçe çevirin. Her iki tarafta 10 saniye bekleyin."
+          }
+        }
+      }
+    },
+    "Skip" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atla"
+          }
+        }
+      }
+    },
+    "Skip available in %llds" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atlama %lld sn sonra"
+          }
+        }
+      }
+    },
+    "Skip break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molayı atla"
+          }
+        }
+      }
+    },
+    "Skip Next Break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonraki Molayı Atla"
+          }
+        }
+      }
+    },
+    "Skip this break →" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu molayı atla →"
+          }
+        }
+      }
+    },
+    "Skip this break?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu mola atlansın mı?"
+          }
+        }
+      }
+    },
+    "Skipped" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atlanan"
+          }
+        }
+      }
+    },
+    "Slowly rotate your head in a circle, 5 times clockwise and 5 times counterclockwise." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başınızı yavaşça daire çizerek çevirin: 5 kez saat yönünde, 5 kez tersine."
+          }
+        }
+      }
+    },
+    "So you'd rather gamble than stand up" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demek ayağa kalkmaktansa kumar oynamayı yeğliyorsunuz"
+          }
+        }
+      }
+    },
+    "Soooo close. The universe has a cruel sense of humor." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çoook yakındı. Evrenin acımasız bir mizah anlayışı var."
+          }
+        }
+      }
+    },
+    "Spin →" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çevir →"
+          }
+        }
+      }
+    },
+    "Spinal Twist" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omurga Dönüşü"
+          }
+        }
+      }
+    },
+    "Spread your fingers wide, hold for 5 seconds, then make a fist. Repeat 8 times." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parmaklarınızı iyice açın, 5 saniye tutun, sonra yumruk yapın. 8 kez tekrarlayın."
+          }
+        }
+      }
+    },
+    "STAND" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "STAND"
+          }
+        }
+      }
+    },
+    "Stand against a wall with your head, shoulders, and hips touching it. Hold this posture for 15 seconds." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başınız, omuzlarınız ve kalçanız değecek şekilde duvara yaslanın. Bu duruşu 15 saniye koruyun."
+          }
+        }
+      }
+    },
+    "Stand and slowly rise onto your toes, then lower back down. Repeat 15 times." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayakta yavaşça parmak ucunuza yükselin, sonra inin. 15 kez tekrarlayın."
+          }
+        }
+      }
+    },
+    "Stand on one leg, grab your opposite foot behind you, and pull your heel toward your glute. Hold 15 seconds each side." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tek ayak üstünde durun, arkadan diğer ayağınızı tutup topuğunuzu kalçanıza doğru çekin. Her iki tarafta 15 saniye bekleyin."
+          }
+        }
+      }
+    },
+    "Stand up and slowly bend forward to touch your toes. Hold for 10 seconds, then slowly rise back up." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayağa kalkıp yavaşça öne eğilerek parmak uçlarınıza dokunun. 10 saniye bekleyin, sonra yavaşça doğrulun."
+          }
+        }
+      }
+    },
+    "Standing is my greatest fear" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En büyük korkum ayakta durmak"
+          }
+        }
+      }
+    },
+    "Standing Squats" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayakta Squat"
+          }
+        }
+      }
+    },
+    "Standing: surprisingly not fatal" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayakta durmak: şaşırtıcı biçimde ölümcül değil"
+          }
+        }
+      }
+    },
+    "StandLock" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "StandLock"
+          }
+        }
+      }
+    },
+    "StandLock needs to restart to apply this permission." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu izni uygulamak için StandLock'un yeniden başlatılması gerekiyor."
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başlangıç"
+          }
+        }
+      }
+    },
+    "Start break" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Molayı başlat"
+          }
+        }
+      }
+    },
+    "Start with a recommended schedule, or configure your own later." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Önerilen bir programla başlayın ya da kendinizinkini sonra yapılandırın."
+          }
+        }
+      }
+    },
+    "Statistics" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İstatistikler"
+          }
+        }
+      }
+    },
+    "Still feeling lucky?" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hâlâ şanslı hissediyor musunuz?"
+          }
+        }
+      }
+    },
+    "Still going? Wow." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hâlâ devam mı? Vay."
+          }
+        }
+      }
+    },
+    "Stop" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Durdur"
+          }
+        }
+      }
+    },
+    "Stop each reel on Skip to win" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kazanmak için her makarayı Atla'da durdurun"
+          }
+        }
+      }
+    },
+    "Streak" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seri"
+          }
+        }
+      }
+    },
+    "Stretch now, debug later" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi esneyin, sonra hata ayıklarsınız"
+          }
+        }
+      }
+    },
+    "Strict" : {
+      "comment" : "DisciplineLevel.displayName",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı"
+          }
+        }
+      }
+    },
+    "Strict has no skip limit; only the emergency escape combo ends a break early." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı'da atlama sınırı yoktur; molayı yalnızca acil çıkış tuş birleşimi erken bitirir."
+          }
+        }
+      }
+    },
+    "Strict inactive, running as Firm" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı devre dışı, Sıkı olarak çalışıyor"
+          }
+        }
+      }
+    },
+    "Strict mode requires Accessibility and Input Monitoring permissions." : {
+      "comment" : "Strict mode blocked reason",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı mod, Erişilebilirlik ve Girdi İzleme izinlerini gerektirir."
+          }
+        }
+      }
+    },
+    "Strict mode requires Accessibility permission to block input during breaks." : {
+      "comment" : "Strict mode blocked reason",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı mod, molalarda girdiyi engellemek için Erişilebilirlik izni gerektirir."
+          }
+        }
+      }
+    },
+    "Strict mode requires Input Monitoring permission for the escape key combo." : {
+      "comment" : "Strict mode blocked reason",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katı mod, çıkış tuş birleşimi için Girdi İzleme izni gerektirir."
+          }
+        }
+      }
+    },
+    "sudo stand up" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sudo stand up"
+          }
+        }
+      }
+    },
+    "System" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistem"
+          }
+        }
+      }
+    },
+    "System follows your Mac's language" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistem, Mac'inizin dilini izler"
+          }
+        }
+      }
+    },
+    "Take 5 deep breaths: inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "5 derin nefes alın: 4 saniye içinize çekin, 4 saniye tutun, 4 saniye verin."
+          }
+        }
+      }
+    },
+    "Take a short walk around your room or office. Move your legs and get your blood flowing." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odanızda ya da ofisinizde kısa bir yürüyüş yapın. Bacaklarınızı hareket ettirin, kanınız dolaşsın."
+          }
+        }
+      }
+    },
+    "Take healthy standing breaks while you work" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çalışırken sağlıklı ayakta mola verin"
+          }
+        }
+      }
+    },
+    "Take the Stairs" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merdiveni Kullan"
+          }
+        }
+      }
+    },
+    "Tell me something I don't know." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilmediğim bir şey söyleyin."
+          }
+        }
+      }
+    },
+    "The chair isn't going anywhere" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sandalye bir yere kaçmıyor"
+          }
+        }
+      }
+    },
+    "The house always wins" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kasa hep kazanır"
+          }
+        }
+      }
+    },
+    "This is fine." : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her şey yolunda."
+          }
+        }
+      }
+    },
+    "This is getting embarrassing" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu iş utanç verici olmaya başladı"
+          }
+        }
+      }
+    },
+    "This Week" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Hafta"
+          }
+        }
+      }
+    },
+    "Time Windows" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaman Aralıkları"
+          }
+        }
+      }
+    },
+    "Timing" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamanlama"
+          }
+        }
+      }
+    },
+    "to" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "–"
+          }
+        }
+      }
+    },
+    "Today" : {
+      "comment" : "StatsPeriod raw value",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugün"
+          }
+        }
+      }
+    },
+    "Toe Touch Stretch" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öne Eğilme"
+          }
+        }
+      }
+    },
+    "Took you two tries but okay." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İki denemenizi aldı ama tamam."
+          }
+        }
+      }
+    },
+    "Try again →" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tekrar dene →"
+          }
+        }
+      }
+    },
+    "Twitter" : {
+      "comment" : "Label for the Twitter link in the About screen.",
+      "isCommentAutoGenerated" : true
+    },
+    "Two buttons. No excuses." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İki düğme. Bahane yok."
+          }
+        }
+      }
+    },
+    "Two down and zero shame. One more." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İki bitti, sıfır utanç. Bir tane daha."
+          }
+        }
+      }
+    },
+    "Two minutes. You'll survive." : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İki dakika. Hayatta kalırsınız."
+          }
+        }
+      }
+    },
+    "Two out of three ain’t... well, it IS bad here." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üçte iki fena değil... aslında burada fena."
+          }
+        }
+      }
+    },
+    "Ugh. Fine, go." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Of. Peki, git."
+          }
+        }
+      }
+    },
+    "Update" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncelle"
+          }
+        }
+      }
+    },
+    "Update available" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncelleme mevcut"
+          }
+        }
+      }
+    },
+    "Use Default Schedule" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsayılan Programı Kullan"
+          }
+        }
+      }
+    },
+    "v%@ available" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "v%@ mevcut"
+          }
+        }
+      }
+    },
+    "Version %@ (Build %@)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sürüm %@ (Yapı %@)"
+          }
+        }
+      }
+    },
+    "Video & Audio" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video ve Ses"
+          }
+        }
+      }
+    },
+    "Walk Around the Room" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odada Yürü"
+          }
+        }
+      }
+    },
+    "Walk to the kitchen and drink a full glass of water. Staying hydrated improves focus." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mutfağa gidip bir bardak su için. Su içmek odaklanmayı artırır."
+          }
+        }
+      }
+    },
+    "Walk to the window and look at something far away for 20 seconds. This helps relax your eye muscles." : {
+      "comment" : "Exercise description",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pencereye gidip 20 saniye uzaktaki bir şeye bakın. Bu, göz kaslarınızı gevşetir."
+          }
+        }
+      }
+    },
+    "Water Break" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Su Molası"
+          }
+        }
+      }
+    },
+    "We both know standing would’ve been easier." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayağa kalkmanın daha kolay olacağını ikimiz de biliyoruz."
+          }
+        }
+      }
+    },
+    "Website" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Web Sitesi"
+          }
+        }
+      }
+    },
+    "Week" : {
+      "comment" : "StatsPeriod raw value",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hafta"
+          }
+        }
+      }
+    },
+    "Weekdays" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hafta İçi"
+          }
+        }
+      }
+    },
+    "Weekends" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hafta Sonu"
+          }
+        }
+      }
+    },
+    "Window Gaze" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pencereye Bak"
+          }
+        }
+      }
+    },
+    "Wow. All three. Wasted." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vay. Üçü de. Boşa gitti."
+          }
+        }
+      }
+    },
+    "Wrist Rotations" : {
+      "comment" : "Exercise title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilek Çevirme"
+          }
+        }
+      }
+    },
+    "Write %@ to continue" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devam etmek için %@ yazın"
+          }
+        }
+      }
+    },
+    "Write %@ to dismiss" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapatmak için %@ yazın"
+          }
+        }
+      }
+    },
+    "Wrong again? Shocking." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yine mi yanlış? Şaşırtıcı."
+          }
+        }
+      }
+    },
+    "Year" : {
+      "comment" : "StatsPeriod raw value",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yıl"
+          }
+        }
+      }
+    },
+    "You actually typed that? Impressive dedication to laziness." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bunu gerçekten yazdınız mı? Tembelliğe etkileyici bir bağlılık."
+          }
+        }
+      }
+    },
+    "You want to skip? Earn it." : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atlamak mı istiyorsunuz? Hak edin."
+          }
+        }
+      }
+    },
+    "You're really committed to failing" : {
+      "comment" : "Break challenge copy",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başarısız olmaya gerçekten kararlısınız"
+          }
+        }
+      }
+    },
+    "You're still here?" : {
+      "comment" : "Break splash",
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hâlâ burada mısınız?"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

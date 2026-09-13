@@ -20,7 +20,9 @@ public func formatMenuBarTimer(
     countdownMinutes: Int,
     isBreakActive: Bool,
     isPaused: Bool,
-    hasScheduledBreak: Bool
+    hasScheduledBreak: Bool,
+    /// Localised by the caller: the Kit ships no string catalog, so the app resolves it.
+    minuteSuffix: String = "m"
 ) -> String? {
     if isBreakActive || isPaused || !hasScheduledBreak { return nil }
     let remaining = max(0, secondsRemaining)
@@ -36,7 +38,7 @@ public func formatMenuBarTimer(
         return String(format: "0:%02d", seconds)
     } else {
         let minutes = Int(ceil(wholeSeconds / 60))
-        return "\(minutes)m"
+        return "\(minutes)\(minuteSuffix)"
     }
 }
 
@@ -55,4 +57,24 @@ public enum ProgressDisplayBranch: Sendable, Equatable {
             self = .partial
         }
     }
+}
+
+/// The anchor `calculateBreakProgress` measures the interval from.
+///
+/// A rebuilt coordinator re-arms the slot it inherited rather than computing a fresh one, so
+/// re-anchoring on that re-arm shrinks the measured interval down to whatever is left of it --
+/// the menu bar ring emptied and refilled at speed on every schedule edit. Same for a window
+/// -anchored slot re-yielded on wake or unlock: the target has not moved, so neither should the
+/// anchor. Only a slot that actually differs from the armed one starts a new interval.
+///
+/// Depends on the caller keeping its previous `nextBreak` across a coordinator teardown --
+/// `AppCoordinator.clearActiveBreakState` deliberately leaves it alone for this reason.
+public func breakProgressAnchor(
+    existingAnchor: Date?,
+    existingNextBreak: Date?,
+    newNextBreak: Date,
+    now: Date = Date()
+) -> Date {
+    guard let existingAnchor, existingNextBreak == newNextBreak else { return now }
+    return existingAnchor
 }

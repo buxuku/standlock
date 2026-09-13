@@ -204,7 +204,7 @@ private struct SplashLabel: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        Text(text)
+        Text(LocalizedStringKey(text))
             .font(BreakTypography.label(size: 16, weight: .bold))
             .foregroundStyle(palette.accent)
             .rotationEffect(.degrees(rotation))

@@ -71,7 +71,7 @@ struct MenuBarView: View {
                 Label("Break waiting", systemImage: "pause.circle")
                     .font(.caption)
                     .foregroundStyle(.orange)
-                Text(reason.displayName)
+                Text(LocalizedStringKey(reason.displayName))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -117,7 +117,7 @@ struct MenuBarView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func statItem(icon: String, value: String, label: String) -> some View {
+    private func statItem(icon: String, value: String, label: LocalizedStringKey) -> some View {
         VStack(spacing: 2) {
             HStack(spacing: 4) {
                 Image(systemName: icon)
@@ -141,9 +141,15 @@ struct MenuBarView: View {
                 Circle()
                     .fill(.green)
                     .frame(width: 6, height: 6)
-                Text(updateObserver.availableVersion.map { "v\($0) available" } ?? "Update available")
-                    .font(.caption)
-                    .foregroundStyle(.green)
+                Group {
+                    if let version = updateObserver.availableVersion {
+                        Text("v\(version) available")
+                    } else {
+                        Text("Update available")
+                    }
+                }
+                .font(.caption)
+                .foregroundStyle(.green)
                 Spacer()
                 Button("Update") {
                     NSApp.activate(ignoringOtherApps: true)
@@ -167,16 +173,20 @@ struct MenuBarView: View {
                 SettingsRowButton(tab: .about)
             } else {
                 Button {
+                    let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .general
                     openSettingsLegacy()
+                    dismissMenuBarPanel(panel)
                 } label: {
                     settingsLabel
                 }
                 .buttonStyle(MenuBarRowStyle())
 
                 Button {
+                    let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .about
                     openSettingsLegacy()
+                    dismissMenuBarPanel(panel)
                 } label: {
                     aboutLabel
                 }
@@ -239,9 +249,14 @@ private struct SettingsRowButton: View {
 
     var body: some View {
         Button {
+            // The MenuBarExtra panel stays up when another window opens, and SwiftUI gives
+            // no handle on it. It is the key window while the click happens, so it is
+            // grabbed here and hidden after Settings takes over as key.
+            let panel = NSApp.keyWindow
             coordinator.selectedSettingsTab = tab
             openSettings()
             NSApp.activate(ignoringOtherApps: true)
+            dismissMenuBarPanel(panel)
         } label: {
             if tab == .about {
                 aboutLabel
@@ -251,6 +266,19 @@ private struct SettingsRowButton: View {
         }
         .buttonStyle(MenuBarRowStyle())
     }
+}
+
+/// Hides the MenuBarExtra panel captured before another window was opened.
+///
+/// `orderOut` rather than `close`: the panel hosts SwiftUI through an NSHostingView,
+/// and closing one of those deadlocks the main thread or frees it out from under the
+/// hosting view. The identity check covers the case where Settings was already open
+/// and key when the row was clicked -- the captured window is then the Settings window
+/// itself, which must not be hidden.
+@MainActor
+private func dismissMenuBarPanel(_ panel: NSWindow?) {
+    guard let panel, panel !== NSApp.keyWindow else { return }
+    panel.orderOut(nil)
 }
 
 struct MenuBarRowStyle: ButtonStyle {

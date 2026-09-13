@@ -13,6 +13,8 @@ struct ActionArea: View {
     let onDismiss: () -> Void
     var onEscape: (() -> Void)?
 
+    @EnvironmentObject private var languageStore: LanguageStore
+
     @State private var showAction = false
     @State private var countdown: Int = 0
 
@@ -73,8 +75,16 @@ struct ActionArea: View {
                 ButtonDismissView(palette: palette, onDismiss: onDismiss)
             }
         case .typePhrase(let phrase, let requiresConfirmation):
+            // A phrase the user chose themselves is shown exactly as stored. Only the
+            // shipped default is a catalog key, so it can be translated.
+            let isCustom = phrase == preferences.firmEscapePhrase
+                && phrase != AppPreferences.defaultFirmEscapePhrase
+            let base = isCustom ? phrase : languageStore.string(key: phrase)
+            let resolved = requiresConfirmation
+                ? languageStore.string("\(base) I really mean it")
+                : base
             PhraseDismissView(
-                palette: palette, phrase: phrase,
+                palette: palette, phrase: resolved,
                 requiresConfirmation: requiresConfirmation,
                 escalationTier: escalationTier,
                 onDismiss: onDismiss
@@ -260,7 +270,7 @@ private struct FindButtonDismissView: View {
             headerView
             attemptDots
             gridView
-            Text(subtitleMessages[min(round, subtitleMessages.count - 1)])
+            Text(LocalizedStringKey(subtitleMessages[min(round, subtitleMessages.count - 1)]))
                 .font(BreakTypography.label(size: 11))
                 .foregroundStyle(palette.inkFaint)
                 .contentTransition(.interpolate)
@@ -273,7 +283,7 @@ private struct FindButtonDismissView: View {
         let text = remainingAttempts == 0
             ? exhaustedMessages[min(round, exhaustedMessages.count - 1)]
             : headerMessages[min(round, headerMessages.count - 1)]
-        return Text(text)
+        return Text(LocalizedStringKey(text))
             .font(BreakTypography.label(size: 14, weight: .medium))
             .foregroundStyle(palette.ink)
             .contentTransition(.interpolate)
@@ -451,7 +461,7 @@ private struct CrateOpeningDismissView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            Text(headerText)
+            Text(LocalizedStringKey(headerText))
                 .font(BreakTypography.label(size: 14, weight: .medium))
                 .foregroundStyle(palette.ink)
                 .contentTransition(.interpolate)
@@ -486,7 +496,7 @@ private struct CrateOpeningDismissView: View {
                                         )
                                 )
                                 .overlay(
-                                    Text(isGreen ? "Skip" : "\u{2715}")
+                                    Text(LocalizedStringKey(isGreen ? "Skip" : "\u{2715}"))
                                         .font(BreakTypography.label(size: isGreen ? 13 : 16, weight: .medium))
                                         .foregroundStyle(.white)
                                 )
@@ -530,7 +540,7 @@ private struct CrateOpeningDismissView: View {
                     .rotationEffect(.degrees(180))
             }
 
-            Text(subtitleText)
+            Text(LocalizedStringKey(subtitleText))
                 .font(BreakTypography.label(size: 11))
                 .foregroundStyle(palette.inkFaint)
                 .contentTransition(.interpolate)
@@ -623,6 +633,8 @@ private struct CrateOpeningDismissView: View {
 // MARK: - Slot Machine
 
 private struct SlotMachineDismissView: View {
+    @EnvironmentObject private var languageStore: LanguageStore
+    @Environment(\.locale) private var locale
     let palette: BreakPalette
     let reelCount: Int
     let maxAttempts: Int
@@ -748,7 +760,7 @@ private struct SlotMachineDismissView: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            Text(headerText)
+            Text(LocalizedStringKey(headerText))
                 .font(BreakTypography.label(size: 14, weight: .medium))
                 .foregroundStyle(palette.ink)
                 .contentTransition(.interpolate)
@@ -774,7 +786,7 @@ private struct SlotMachineDismissView: View {
                     }
                 }
 
-                Text(subtitleText)
+                Text(LocalizedStringKey(subtitleText))
                     .font(BreakTypography.label(size: 11))
                     .foregroundStyle(palette.inkFaint)
                     .contentTransition(.interpolate)
@@ -893,7 +905,7 @@ private struct SlotMachineDismissView: View {
                     )
             )
             .overlay(
-                Text(symbol.label)
+                Text(LocalizedStringKey(symbol.label))
                     .font(BreakTypography.label(size: symbol.isWin ? 13 : 18, weight: .medium))
                     .foregroundStyle(.white)
             )
@@ -901,7 +913,7 @@ private struct SlotMachineDismissView: View {
 
     @ViewBuilder
     private var fallbackContent: some View {
-        Text(fallbackPhrase)
+        Text(LocalizedStringKey(fallbackPhrase))
             .font(BreakTypography.label(size: 16, weight: .bold))
             .foregroundStyle(palette.accent)
             .padding(.horizontal, 16)
@@ -924,7 +936,7 @@ private struct SlotMachineDismissView: View {
             )
             .frame(width: 250)
 
-        if fallbackInput.trimmingCharacters(in: .whitespaces).caseInsensitiveCompare(fallbackPhrase) == .orderedSame {
+        if phraseMatches(fallbackInput, expected: languageStore.string(key: fallbackPhrase), locale: locale) {
             Button(action: onDismiss) {
                 VStack(spacing: 4) {
                     Text("Fine, go \u{2192}")
@@ -1188,6 +1200,8 @@ private struct IndicatorTriangle: Shape {
 // MARK: - Roast Challenge
 
 private struct RoastChallengeDismissView: View {
+    @EnvironmentObject private var languageStore: LanguageStore
+    @Environment(\.locale) private var locale
     let palette: BreakPalette
     let sentenceCount: Int
     let onDismiss: () -> Void
@@ -1254,14 +1268,25 @@ private struct RoastChallengeDismissView: View {
         "Last one. Make it count.",
     ]
 
-    private var phraseMatches: Bool {
-        typedText.trimmingCharacters(in: .whitespaces)
-            .caseInsensitiveCompare(selectedSentences[currentIndex]) == .orderedSame
+    private var currentSentence: String {
+        languageStore.string(key: selectedSentences[currentIndex])
+    }
+
+    private var inputMatches: Bool {
+        phraseMatches(typedText, expected: currentSentence, locale: locale)
+    }
+
+    private var quotedSentence: Text {
+        // foregroundColor, not foregroundStyle: the Text -> Text overload of the latter
+        // is macOS 14, and interpolating into a sentence needs a Text back.
+        Text(verbatim: "\"\(currentSentence)\"")
+            .font(BreakTypography.exerciseName(size: 12).italic())
+            .foregroundColor(palette.ink)
     }
 
     var body: some View {
         VStack(spacing: 12) {
-            Text(Self.headerMessages[min(currentIndex, Self.headerMessages.count - 1)])
+            Text(LocalizedStringKey(Self.headerMessages[min(currentIndex, Self.headerMessages.count - 1)]))
                 .font(BreakTypography.label(size: 14, weight: .medium))
                 .foregroundStyle(palette.ink)
                 .contentTransition(.interpolate)
@@ -1278,21 +1303,12 @@ private struct RoastChallengeDismissView: View {
             switch phase {
             case .typing:
                 VStack(spacing: 12) {
-                    HStack(spacing: 0) {
-                        Text("Write ")
-                            .font(BreakTypography.label(size: 12))
-                            .tracking(0.15)
-                            .foregroundStyle(palette.inkFaint)
-                        Text("\"\(selectedSentences[currentIndex])\"")
-                            .font(BreakTypography.exerciseName(size: 12).italic())
-                            .foregroundStyle(palette.ink)
-                            .contentTransition(.interpolate)
-                        Text(" to continue")
-                            .font(BreakTypography.label(size: 12))
-                            .tracking(0.15)
-                            .foregroundStyle(palette.inkFaint)
-                    }
-                    .animation(.easeInOut(duration: 0.2), value: currentIndex)
+                    Text("Write \(quotedSentence) to continue")
+                        .font(BreakTypography.label(size: 12))
+                        .tracking(0.15)
+                        .foregroundStyle(palette.inkFaint)
+                        .contentTransition(.interpolate)
+                        .animation(.easeInOut(duration: 0.2), value: currentIndex)
 
                     TextField("", text: $typedText)
                         .font(BreakTypography.exerciseName(size: 16))
@@ -1324,14 +1340,14 @@ private struct RoastChallengeDismissView: View {
                 .transition(.opacity)
 
             case .responding:
-                Text(currentResponse)
+                Text(LocalizedStringKey(currentResponse))
                     .font(BreakTypography.label(size: 13, weight: .medium))
                     .foregroundStyle(palette.ink)
                     .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.2), value: phase == .responding)
-        .onChange(of: phraseMatches) { matches in
+        .onChange(of: inputMatches) { matches in
             guard matches else { return }
             let responsePool: [String]
             switch currentIndex {
@@ -1402,43 +1418,49 @@ private struct PhraseDismissView: View {
     @State private var typedPhrase = ""
     @State private var previousPhrase = ""
     @State private var showSkipConfirmation = false
-    @State private var displayPhrase: String
     @State private var switchCount = 0
     @State private var canSwitch = true
     @FocusState private var isFieldFocused: Bool
 
-    init(palette: BreakPalette, phrase: String, requiresConfirmation: Bool,
-         escalationTier: Int, onDismiss: @escaping () -> Void) {
-        self.palette = palette
-        self.phrase = phrase
-        self.requiresConfirmation = requiresConfirmation
-        self.escalationTier = escalationTier
-        self.onDismiss = onDismiss
-        self._displayPhrase = State(initialValue: phrase)
+    @EnvironmentObject private var languageStore: LanguageStore
+    @Environment(\.locale) private var locale
+
+    /// Which sentence the field is asking for. Holding the stage rather than the resolved
+    /// text is what lets an open overlay follow a language change mid-break.
+    private enum Stage {
+        case original, areYouSure, solemnOath
+    }
+    @State private var stage: Stage = .original
+
+    private var displayPhrase: String {
+        switch stage {
+        case .original: phrase
+        case .areYouSure: languageStore.string("Are you sure about that?")
+        case .solemnOath:
+            languageStore.string("I solemnly swear to take every single break from now until the end of time itself")
+        }
     }
 
-    private var phraseMatches: Bool {
-        typedPhrase.trimmingCharacters(in: .whitespaces)
-            .caseInsensitiveCompare(displayPhrase) == .orderedSame
+    private var inputMatches: Bool {
+        phraseMatches(typedPhrase, expected: displayPhrase, locale: locale)
+    }
+
+    private var quotedPhrase: Text {
+        // foregroundColor, not foregroundStyle: the Text -> Text overload of the latter
+        // is macOS 14, and interpolating into a sentence needs a Text back.
+        Text(verbatim: "\"\(displayPhrase)\"")
+            .font(BreakTypography.exerciseName(size: 12).italic())
+            .foregroundColor(palette.ink)
     }
 
     var body: some View {
         VStack(spacing: 12) {
-            HStack(spacing: 0) {
-                Text("Write ")
-                    .font(BreakTypography.label(size: 12))
-                    .tracking(0.15)
-                    .foregroundStyle(palette.inkFaint)
-                Text("\"\(displayPhrase)\"")
-                    .font(BreakTypography.exerciseName(size: 12).italic())
-                    .foregroundStyle(palette.ink)
-                    .contentTransition(.interpolate)
-                Text(" to dismiss")
-                    .font(BreakTypography.label(size: 12))
-                    .tracking(0.15)
-                    .foregroundStyle(palette.inkFaint)
-            }
-            .animation(.easeInOut(duration: 0.2), value: displayPhrase)
+            Text("Write \(quotedPhrase) to dismiss")
+                .font(BreakTypography.label(size: 12))
+                .tracking(0.15)
+                .foregroundStyle(palette.inkFaint)
+                .contentTransition(.interpolate)
+                .animation(.easeInOut(duration: 0.2), value: displayPhrase)
 
             TextField("", text: $typedPhrase)
                 .font(BreakTypography.exerciseName(size: 16))
@@ -1479,18 +1501,12 @@ private struct PhraseDismissView: View {
                     canSwitch = false
                     typedPhrase = ""
                     previousPhrase = ""
-                    let nextPhrase: String
-                    if switchCount == 1 {
-                        nextPhrase = "Are you sure about that?"
-                    } else {
-                        nextPhrase = "I solemnly swear to take every single break from now until the end of time itself"
-                    }
                     withAnimation(.easeInOut(duration: 0.2)) {
-                        displayPhrase = nextPhrase
+                        stage = switchCount == 1 ? .areYouSure : .solemnOath
                     }
                 }
         }
-        .onChange(of: phraseMatches) { matches in
+        .onChange(of: inputMatches) { matches in
             if matches {
                 if requiresConfirmation {
                     showSkipConfirmation = true
@@ -1514,7 +1530,7 @@ private struct PhraseDismissView: View {
             typedPhrase = ""
             previousPhrase = ""
             withAnimation(.easeInOut(duration: 0.2)) {
-                displayPhrase = phrase
+                stage = .original
             }
         }
         .transition(.opacity)

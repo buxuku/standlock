@@ -3,6 +3,7 @@ import ServiceManagement
 
 struct GeneralSettingsView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
+    @EnvironmentObject private var languageStore: LanguageStore
     @State private var launchAtStartup = SMAppService.mainApp.status == .enabled
     @State private var errorMessage: String?
     @State private var isUpdating = false
@@ -28,9 +29,32 @@ struct GeneralSettingsView: View {
                 }
 
                 if let errorMessage {
-                    Text(errorMessage)
+                    Text("Failed to update login item: \(errorMessage)")
                         .font(.caption)
                         .foregroundStyle(.red)
+                }
+            }
+
+            Section("Language") {
+                Picker(selection: Binding(
+                    get: { languageStore.selection },
+                    set: { languageStore.select($0) }
+                )) {
+                    Text("System").tag(String?.none)
+                    ForEach(languageStore.available, id: \.self) { code in
+                        Text(languageStore.displayName(for: code)).tag(Optional(code))
+                    }
+                } label: {
+                    Label {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Language")
+                            Text("System follows your Mac's language")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    } icon: {
+                        Image(systemName: "globe")
+                    }
                 }
             }
 
@@ -100,7 +124,7 @@ struct GeneralSettingsView: View {
         .formStyle(.grouped)
     }
 
-    private func skipLimitStepper(title: String, icon: String, value: Binding<Int>) -> some View {
+    private func skipLimitStepper(title: LocalizedStringKey, icon: String, value: Binding<Int>) -> some View {
         Stepper(value: value, in: 1...20) {
             Label {
                 VStack(alignment: .leading, spacing: 2) {
@@ -130,7 +154,7 @@ struct GeneralSettingsView: View {
             errorMessage = nil
         } catch {
             launchAtStartup = !enabled
-            errorMessage = "Failed to update login item: \(error.localizedDescription)"
+            errorMessage = error.localizedDescription
         }
     }
 }

@@ -1,6 +1,10 @@
 import Foundation
 
 public struct AppPreferences: Codable, Sendable, Equatable {
+    /// The escape phrase a user gets until they set their own. The app treats a
+    /// stored phrase equal to this one as translatable; anything else is shown verbatim.
+    public static let defaultFirmEscapePhrase = "I choose to skip this break"
+
     public var gentleDailySkipLimit: Int
     public var firmSkipDelay: TimeInterval
     public var firmEscapePhrase: String
@@ -26,7 +30,7 @@ public struct AppPreferences: Codable, Sendable, Equatable {
     public init(
         gentleDailySkipLimit: Int = 5,
         firmSkipDelay: TimeInterval = 10,
-        firmEscapePhrase: String = "I choose to skip this break",
+        firmEscapePhrase: String = AppPreferences.defaultFirmEscapePhrase,
         firmDailySkipLimit: Int = 5,
         strictEscapeHoldDuration: TimeInterval = 10,
         cameraDetection: DetectionBehavior = .deferBreak,
@@ -76,7 +80,7 @@ public struct AppPreferences: Codable, Sendable, Equatable {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         gentleDailySkipLimit = try c.decodeIfPresent(Int.self, forKey: .gentleDailySkipLimit) ?? 5
         firmSkipDelay = try c.decodeIfPresent(TimeInterval.self, forKey: .firmSkipDelay) ?? 10
-        firmEscapePhrase = try c.decodeIfPresent(String.self, forKey: .firmEscapePhrase) ?? "I choose to skip this break"
+        firmEscapePhrase = try c.decodeIfPresent(String.self, forKey: .firmEscapePhrase) ?? AppPreferences.defaultFirmEscapePhrase
         firmDailySkipLimit = try c.decodeIfPresent(Int.self, forKey: .firmDailySkipLimit) ?? 5
         strictEscapeHoldDuration = try c.decodeIfPresent(TimeInterval.self, forKey: .strictEscapeHoldDuration) ?? 10
         cameraDetection = try c.decodeIfPresent(DetectionBehavior.self, forKey: .cameraDetection) ?? .deferBreak

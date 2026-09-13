@@ -63,8 +63,8 @@ struct PermissionsStepView: View {
 
     private func permissionCard(
         icon: String,
-        name: String,
-        description: String,
+        name: LocalizedStringKey,
+        description: LocalizedStringKey,
         status: PermissionStatus,
         action: @escaping () -> Void,
         restartAction: @escaping () -> Void

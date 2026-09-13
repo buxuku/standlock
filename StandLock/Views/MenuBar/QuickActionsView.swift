@@ -4,6 +4,7 @@ import StandLockCore
 struct QuickActionsView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @EnvironmentObject private var checker: PermissionChecker
+    @EnvironmentObject private var languageStore: LanguageStore
 
     private var activeSchedule: Schedule? {
         coordinator.schedules.first(where: \.isEnabled)
@@ -81,7 +82,7 @@ struct QuickActionsView: View {
                         .font(.caption2)
                         .foregroundStyle(.orange)
                 } else {
-                    Text(schedule.disciplineLevel.displayName)
+                    Text(LocalizedStringKey(schedule.disciplineLevel.displayName))
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
@@ -100,15 +101,15 @@ struct QuickActionsView: View {
         let handler = PauseMenuHandler(coordinator: coordinator)
         let menu = NSMenu()
 
-        let item30 = NSMenuItem(title: "30 minutes", action: #selector(PauseMenuHandler.pause30), keyEquivalent: "")
+        let item30 = NSMenuItem(title: languageStore.string("30 minutes"), action: #selector(PauseMenuHandler.pause30), keyEquivalent: "")
         item30.target = handler
         menu.addItem(item30)
 
-        let item60 = NSMenuItem(title: "1 hour", action: #selector(PauseMenuHandler.pause60), keyEquivalent: "")
+        let item60 = NSMenuItem(title: languageStore.string("1 hour"), action: #selector(PauseMenuHandler.pause60), keyEquivalent: "")
         item60.target = handler
         menu.addItem(item60)
 
-        let item120 = NSMenuItem(title: "2 hours", action: #selector(PauseMenuHandler.pause120), keyEquivalent: "")
+        let item120 = NSMenuItem(title: languageStore.string("2 hours"), action: #selector(PauseMenuHandler.pause120), keyEquivalent: "")
         item120.target = handler
         menu.addItem(item120)
 

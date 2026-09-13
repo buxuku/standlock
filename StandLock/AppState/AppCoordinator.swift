@@ -44,7 +44,8 @@ final class AppCoordinator: ObservableObject {
     @Published private(set) var menuBarTimerText: String?
     @Published var breakHistory: BreakHistory = BreakHistory()
 
-    let permissionChecker = PermissionChecker()
+    let languageStore = LanguageStore()
+    let permissionChecker: PermissionChecker
 
     private var coordinator: BreakCoordinator?
     /// Survives the coordinator-less interval between a teardown and the next build.
@@ -57,7 +58,7 @@ final class AppCoordinator: ObservableObject {
     /// next morning restores yesterday's exhausted cap.
     private var carriedEnforcementDay = Date()
     private var calendarDetector: CalendarDetector?
-    private let overlayController = OverlayWindowController()
+    private let overlayController: OverlayWindowController
     private var eventListenerTask: Task<Void, Never>?
     private var progressTimer: Task<Void, Never>?
     private var loadedExercises: [Exercise] = []
@@ -66,6 +67,8 @@ final class AppCoordinator: ObservableObject {
     private var permissionSyncCancellable: AnyCancellable?
 
     init() {
+        permissionChecker = PermissionChecker(languageStore: languageStore)
+        overlayController = OverlayWindowController(languageStore: languageStore)
         loadExercises()
         loadData()
         syncPreferencesWithPermissions()
@@ -306,6 +309,10 @@ final class AppCoordinator: ObservableObject {
     /// carried one is cancelled just above. Leaving it set made the menu bar report a break in
     /// progress with no overlay on screen -- and kept the quick actions disabled -- until the
     /// next break fired. Reachable by editing a schedule while a break is up.
+    ///
+    /// `nextBreakTime` and `breakScheduledAt` are deliberately left alone: `breakProgressAnchor`
+    /// compares the surviving `nextBreakTime` against the re-armed slot to decide whether the
+    /// interval is the same one. Clearing them here restarts the progress ring on every rebuild.
     private func clearActiveBreakState() {
         isBreakActive = false
         currentBreakRemaining = 0
@@ -353,8 +360,16 @@ final class AppCoordinator: ObservableObject {
         switch event {
         case .nextBreakScheduled(let date):
             deferralReason = nil
+            // Not always `Date()`: a rebuilt coordinator re-arms the slot it inherited, and
+            // re-anchoring on that collapses the interval the ring measures to whatever is left
+            // of it -- editing a schedule twenty seconds before a break emptied the menu bar
+            // icon and refilled it over those twenty seconds.
+            breakScheduledAt = breakProgressAnchor(
+                existingAnchor: breakScheduledAt,
+                existingNextBreak: nextBreakTime,
+                newNextBreak: date
+            )
             nextBreakTime = date
-            breakScheduledAt = Date()
             recalculateProgress()
             updateMenuBarTimer()
             if menuBarTimerText != nil {
@@ -509,7 +524,8 @@ final class AppCoordinator: ObservableObject {
             countdownMinutes: preferences.menuBarCountdownMinutes,
             isBreakActive: isBreakActive,
             isPaused: isPaused,
-            hasScheduledBreak: nextBreakTime != nil
+            hasScheduledBreak: nextBreakTime != nil,
+            minuteSuffix: languageStore.string("m")
         )
     }
 
@@ -537,9 +553,11 @@ final class AppCoordinator: ObservableObject {
         window.titleVisibility = .hidden
         window.isReleasedWhenClosed = false
         window.contentView = NSHostingView(
-            rootView: OnboardingView()
-                .environmentObject(self)
-                .environmentObject(permissionChecker)
+            rootView: LocalizedRoot(store: languageStore) {
+                OnboardingView()
+                    .environmentObject(self)
+                    .environmentObject(self.permissionChecker)
+            }
         )
         window.center()
 

@@ -3,6 +3,9 @@ import StandLockCore
 
 struct ScheduleEditorView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
+    // Captured here, not read inside the sheet: a presentation starts a fresh root, so
+    // the chosen locale has to be re-applied on the other side of it.
+    @EnvironmentObject private var languageStore: LanguageStore
     @State private var sheetMode: SheetMode?
 
     var body: some View {
@@ -26,19 +29,21 @@ struct ScheduleEditorView: View {
             }
         }
         .sheet(item: $sheetMode) { mode in
-            ScheduleFormView(
-                schedule: mode.schedule,
-                onSave: { schedule in
-                    switch mode {
-                    case .add:
-                        coordinator.addSchedule(schedule)
-                    case .edit:
-                        coordinator.updateSchedule(schedule)
-                    }
-                    sheetMode = nil
-                },
-                onCancel: { sheetMode = nil }
-            )
+            LocalizedRoot(store: languageStore) {
+                ScheduleFormView(
+                    schedule: mode.schedule,
+                    onSave: { schedule in
+                        switch mode {
+                        case .add:
+                            coordinator.addSchedule(schedule)
+                        case .edit:
+                            coordinator.updateSchedule(schedule)
+                        }
+                        sheetMode = nil
+                    },
+                    onCancel: { sheetMode = nil }
+                )
+            }
         }
     }
 
@@ -110,6 +115,8 @@ private struct ScheduleRow: View {
     let onEdit: () -> Void
     let onDelete: () -> Void
     @EnvironmentObject private var checker: PermissionChecker
+    @EnvironmentObject private var languageStore: LanguageStore
+    @Environment(\.locale) private var locale
     @State private var showDeleteConfirmation = false
 
     var body: some View {
@@ -151,7 +158,7 @@ private struct ScheduleRow: View {
                     }
                     .font(.caption)
                     .foregroundStyle(.orange)
-                    .help(checker.strictModeBlockedReason ?? "")
+                    .help(LocalizedStringKey(checker.strictModeBlockedReason ?? ""))
                 }
             }
 
@@ -179,45 +186,51 @@ private struct ScheduleRow: View {
             }
             .buttonStyle(.plain)
             .sheet(isPresented: $showDeleteConfirmation) {
-                DeleteConfirmationView(
-                    scheduleName: schedule.name,
-                    onCancel: { showDeleteConfirmation = false },
-                    onDelete: {
-                        showDeleteConfirmation = false
-                        onDelete()
-                    }
-                )
+                LocalizedRoot(store: languageStore) {
+                    DeleteConfirmationView(
+                        scheduleName: schedule.name,
+                        onCancel: { showDeleteConfirmation = false },
+                        onDelete: {
+                            showDeleteConfirmation = false
+                            onDelete()
+                        }
+                    )
+                }
             }
         }
         .padding(.vertical, 4)
     }
 
     private var daysSummary: String {
+        let symbols = WeekdaySymbols(locale: locale)
         switch schedule.days {
-        case .everyDay: return "Every day"
-        case .weekdays: return "Mon-Fri"
-        case .weekends: return "Sat-Sun"
+        case .everyDay: return languageStore.string("Every day")
+        case .weekdays: return "\(symbols.short(for: .monday))-\(symbols.short(for: .friday))"
+        case .weekends: return "\(symbols.short(for: .saturday))-\(symbols.short(for: .sunday))"
         case .custom(let days):
-            return days.sorted().map(\.shortName).joined(separator: ", ")
+            return days.sorted().map(symbols.short(for:)).joined(separator: ", ")
         }
     }
 
     private var windowSummary: String {
-        guard let w = schedule.windows.first else { return "All day" }
+        guard let w = schedule.windows.first else { return languageStore.string("All day") }
         return String(format: "%02d:%02d-%02d:%02d", w.startHour, w.startMinute, w.endHour, w.endMinute)
     }
 
     private var intervalSummary: String {
+        // One key covers both branches: the minutes are built first, then interpolated.
+        let minutes: String
         if let cycle = schedule.intervalCycle, cycle.count >= 2 {
-            let minutes = cycle.map { String(Int($0.duration / 60)) }
-            return "every " + minutes.joined(separator: "/") + "m"
+            minutes = cycle.map { String(Int($0.duration / 60)) }.joined(separator: "/")
+        } else {
+            minutes = String(Int(schedule.breakInterval / 60))
         }
-        let minutes = Int(schedule.breakInterval / 60)
-        return "every \(minutes)m"
+        return languageStore.string("every \(minutes)m")
     }
 
     private var levelBadge: some View {
-        Text(schedule.disciplineLevel.displayName + (schedule.progressiveEnforcement ? "+" : ""))
+        Text(languageStore.string(key: schedule.disciplineLevel.displayName)
+            + (schedule.progressiveEnforcement ? "+" : ""))
             .font(.caption2.weight(.medium))
             .padding(.horizontal, 8)
             .padding(.vertical, 3)

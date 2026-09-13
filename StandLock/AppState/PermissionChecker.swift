@@ -45,8 +45,12 @@ final class PermissionChecker: ObservableObject {
     @Published var calendarNeedsRestart = false
 
     private let eventStore = EKEventStore()
+    /// The alerts below are AppKit, so they cannot lean on the environment locale the way a
+    /// `Text(LocalizedStringKey:)` does -- every string they show is resolved through here.
+    private let languageStore: LanguageStore
 
-    init() {
+    init(languageStore: LanguageStore) {
+        self.languageStore = languageStore
         inputMonitoringGranted = CGPreflightListenEventAccess()
         accessibilityGranted = AXIsProcessTrusted()
         calendarStatus = EKEventStore.authorizationStatus(for: .event)
@@ -192,8 +196,10 @@ final class PermissionChecker: ObservableObject {
             NSApp.terminate(nil)
         } catch {
             let alert = NSAlert()
-            alert.messageText = "Restart Failed"
-            alert.informativeText = "Could not relaunch StandLock. Please reopen the app manually."
+            alert.messageText = languageStore.string("Restart Failed")
+            alert.informativeText = languageStore.string(
+                "Could not relaunch StandLock. Please reopen the app manually."
+            )
             alert.alertStyle = .warning
             alert.runModal()
         }
@@ -203,11 +209,16 @@ final class PermissionChecker: ObservableObject {
         guard !Self.shownRestartAlerts.contains(permissionName) else { return }
         Self.shownRestartAlerts.insert(permissionName)
 
+        // `permissionName` stays English: it is the key both for the catalog lookup and for
+        // the shown-already set above, which must not change when the user switches language.
+        let localizedName = languageStore.string(key: permissionName)
         let alert = NSAlert()
-        alert.messageText = "\(permissionName) Permission Granted"
-        alert.informativeText = "StandLock needs to restart to apply this permission."
-        alert.addButton(withTitle: "Restart Now")
-        alert.addButton(withTitle: "Later")
+        alert.messageText = languageStore.string("\(localizedName) Permission Granted")
+        alert.informativeText = languageStore.string(
+            "StandLock needs to restart to apply this permission."
+        )
+        alert.addButton(withTitle: languageStore.string("Restart Now"))
+        alert.addButton(withTitle: languageStore.string("Later"))
         alert.alertStyle = .informational
 
         if alert.runModal() == .alertFirstButtonReturn {

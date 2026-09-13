@@ -6,6 +6,8 @@ struct ScheduleFormView: View {
     let onSave: (Schedule) -> Void
     let onCancel: () -> Void
 
+    @Environment(\.locale) private var locale
+
     @State private var name: String = ""
     @State private var dayPreset: DayPreset = .weekdays
     @State private var customDays: Set<Weekday> = []
@@ -90,7 +92,7 @@ struct ScheduleFormView: View {
                 HStack(spacing: 4) {
                     ForEach(Weekday.allCases, id: \.self) { day in
                         let isSelected = customDays.contains(day)
-                        Button(day.shortName) {
+                        Button(WeekdaySymbols(locale: locale).short(for: day)) {
                             if isSelected { customDays.remove(day) }
                             else { customDays.insert(day) }
                         }
@@ -257,7 +259,7 @@ struct ScheduleFormView: View {
 
     // MARK: - Helpers
 
-    private func presetButton(_ label: String, preset: DayPreset) -> some View {
+    private func presetButton(_ label: LocalizedStringKey, preset: DayPreset) -> some View {
         Button(label) { dayPreset = preset }
             .buttonStyle(.plain)
             .font(.caption.weight(.medium))
@@ -270,7 +272,7 @@ struct ScheduleFormView: View {
             .foregroundStyle(dayPreset == preset ? .white : .primary)
     }
 
-    private func timePicker(_ label: String, hour: Binding<Int>, minute: Binding<Int>) -> some View {
+    private func timePicker(_ label: LocalizedStringKey, hour: Binding<Int>, minute: Binding<Int>) -> some View {
         HStack(spacing: 2) {
             Picker(label, selection: hour) {
                 ForEach(0..<24, id: \.self) { h in

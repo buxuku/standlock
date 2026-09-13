@@ -279,10 +279,16 @@ struct ScheduleModelTests {
         #expect(policy.tiers[0].dismissMechanism == .typePhrase(phrase: "let me go", requiresConfirmation: false))
         #expect(policy.tiers[2].dismissMechanism == .slotMachine(reelCount: 3, maxAttempts: 3))
         #expect(policy.tiers[2].skipDelay == 30)
-        #expect(policy.tiers[3].dismissMechanism == .typePhrase(phrase: "let me go I really mean it", requiresConfirmation: true))
+        #expect(policy.tiers[3].dismissMechanism == .typePhrase(phrase: "let me go", requiresConfirmation: true))
         #expect(policy.tiers[3].skipDelay == 35)
         #expect(policy.tiers[4].dismissMechanism == .roastChallenge(sentenceCount: 3))
         #expect(policy.tiers[4].skipDelay == 40)
+    }
+
+    @Test func appPreferencesDefaultPhraseConstant() throws {
+        #expect(AppPreferences().firmEscapePhrase == AppPreferences.defaultFirmEscapePhrase)
+        let decoded = try JSONDecoder().decode(AppPreferences.self, from: Data("{}".utf8))
+        #expect(decoded.firmEscapePhrase == AppPreferences.defaultFirmEscapePhrase)
     }
 
     @Test func enforcementPolicyStrictUsesPreferences() {

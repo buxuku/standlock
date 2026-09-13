@@ -29,7 +29,7 @@ struct DisciplineLevelPicker: View {
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text(checker.strictModeBlockedReason ?? "")
+            Text(LocalizedStringKey(checker.strictModeBlockedReason ?? ""))
         }
     }
 }
@@ -45,11 +45,11 @@ private struct LevelCard: View {
                 .font(.title2)
                 .foregroundStyle(isSelected ? .white : .secondary)
 
-            Text(level.displayName)
+            Text(LocalizedStringKey(level.displayName))
                 .font(.subheadline.weight(.medium))
                 .foregroundStyle(isSelected ? .white : .primary)
 
-            Text(level.description)
+            Text(LocalizedStringKey(level.description))
                 .font(.caption2)
                 .foregroundStyle(isSelected ? .white.opacity(0.8) : .secondary)
                 .multilineTextAlignment(.center)
