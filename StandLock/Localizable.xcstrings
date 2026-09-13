@@ -1346,7 +1346,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kararlı"
+            "value" : "Sıkı"
           }
         }
       }
@@ -1356,7 +1356,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kararlı Günlük Atlama Sınırı"
+            "value" : "Sıkı Günlük Atlama Sınırı"
           }
         }
       }
@@ -1412,7 +1412,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nazik"
+            "value" : "Esnek"
           }
         }
       }
@@ -1422,7 +1422,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nazik Günlük Atlama Sınırı"
+            "value" : "Esnek Günlük Atlama Sınırı"
           }
         }
       }
@@ -1432,7 +1432,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nazik mod"
+            "value" : "Esnek mod"
           }
         }
       }
@@ -2577,7 +2577,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nazik'e düşür"
+            "value" : "Esnek'e düşür"
           }
         }
       }
@@ -3209,7 +3209,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Katı devre dışı, Kararlı olarak çalışıyor"
+            "value" : "Katı devre dışı, Sıkı olarak çalışıyor"
           }
         }
       }
