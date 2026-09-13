@@ -185,7 +185,7 @@
       }
     },
     "✕" : {
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
