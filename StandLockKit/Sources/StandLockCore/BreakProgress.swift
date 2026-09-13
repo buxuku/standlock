@@ -20,7 +20,9 @@ public func formatMenuBarTimer(
     countdownMinutes: Int,
     isBreakActive: Bool,
     isPaused: Bool,
-    hasScheduledBreak: Bool
+    hasScheduledBreak: Bool,
+    /// Localised by the caller: the Kit ships no string catalog, so the app resolves it.
+    minuteSuffix: String = "m"
 ) -> String? {
     if isBreakActive || isPaused || !hasScheduledBreak { return nil }
     let remaining = max(0, secondsRemaining)
@@ -36,7 +38,7 @@ public func formatMenuBarTimer(
         return String(format: "0:%02d", seconds)
     } else {
         let minutes = Int(ceil(wholeSeconds / 60))
-        return "\(minutes)m"
+        return "\(minutes)\(minuteSuffix)"
     }
 }
 

@@ -272,7 +272,7 @@ struct ScheduleFormView: View {
             .foregroundStyle(dayPreset == preset ? .white : .primary)
     }
 
-    private func timePicker(_ label: String, hour: Binding<Int>, minute: Binding<Int>) -> some View {
+    private func timePicker(_ label: LocalizedStringKey, hour: Binding<Int>, minute: Binding<Int>) -> some View {
         HStack(spacing: 2) {
             Picker(label, selection: hour) {
                 ForEach(0..<24, id: \.self) { h in

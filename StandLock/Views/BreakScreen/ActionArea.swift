@@ -496,7 +496,7 @@ private struct CrateOpeningDismissView: View {
                                         )
                                 )
                                 .overlay(
-                                    Text(isGreen ? "Skip" : "\u{2715}")
+                                    Text(LocalizedStringKey(isGreen ? "Skip" : "\u{2715}"))
                                         .font(BreakTypography.label(size: isGreen ? 13 : 16, weight: .medium))
                                         .foregroundStyle(.white)
                                 )
@@ -905,7 +905,7 @@ private struct SlotMachineDismissView: View {
                     )
             )
             .overlay(
-                Text(symbol.label)
+                Text(LocalizedStringKey(symbol.label))
                     .font(BreakTypography.label(size: symbol.isWin ? 13 : 18, weight: .medium))
                     .foregroundStyle(.white)
             )

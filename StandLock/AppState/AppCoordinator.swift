@@ -44,8 +44,8 @@ final class AppCoordinator: ObservableObject {
     @Published private(set) var menuBarTimerText: String?
     @Published var breakHistory: BreakHistory = BreakHistory()
 
-    let permissionChecker = PermissionChecker()
     let languageStore = LanguageStore()
+    let permissionChecker: PermissionChecker
 
     private var coordinator: BreakCoordinator?
     /// Survives the coordinator-less interval between a teardown and the next build.
@@ -67,6 +67,7 @@ final class AppCoordinator: ObservableObject {
     private var permissionSyncCancellable: AnyCancellable?
 
     init() {
+        permissionChecker = PermissionChecker(languageStore: languageStore)
         overlayController = OverlayWindowController(languageStore: languageStore)
         loadExercises()
         loadData()
@@ -523,7 +524,8 @@ final class AppCoordinator: ObservableObject {
             countdownMinutes: preferences.menuBarCountdownMinutes,
             isBreakActive: isBreakActive,
             isPaused: isPaused,
-            hasScheduledBreak: nextBreakTime != nil
+            hasScheduledBreak: nextBreakTime != nil,
+            minuteSuffix: languageStore.string("m")
         )
     }
 

@@ -179,6 +179,20 @@ struct BreakProgressTests {
         ) == "1m")
     }
 
+    @Test func minuteSuffixIsCallerSupplied() {
+        #expect(formatMenuBarTimer(
+            secondsRemaining: 120, showFullTimer: true, countdownMinutes: 1,
+            isBreakActive: false, isPaused: false, hasScheduledBreak: true,
+            minuteSuffix: "dk"
+        ) == "2dk")
+        // Below a minute the suffix has no place to land.
+        #expect(formatMenuBarTimer(
+            secondsRemaining: 20, showFullTimer: true, countdownMinutes: 1,
+            isBreakActive: false, isPaused: false, hasScheduledBreak: true,
+            minuteSuffix: "dk"
+        ) == "0:20")
+    }
+
     @Test func zeroSecondsFormatsCorrectly() {
         #expect(formatMenuBarTimer(
             secondsRemaining: 0, showFullTimer: true, countdownMinutes: 1,

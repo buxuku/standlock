@@ -56,7 +56,7 @@ struct AboutView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 
-    private func aboutLink(_ title: String, icon: String, url: String) -> some View {
+    private func aboutLink(_ title: LocalizedStringKey, icon: String, url: String) -> some View {
         Link(destination: URL(string: url)!) {
             Label(title, systemImage: icon)
                 .font(.footnote)
