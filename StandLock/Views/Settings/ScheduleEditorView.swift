@@ -3,6 +3,9 @@ import StandLockCore
 
 struct ScheduleEditorView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
+    // Captured here, not read inside the sheet: a presentation starts a fresh root, so
+    // the chosen locale has to be re-applied on the other side of it.
+    @EnvironmentObject private var languageStore: LanguageStore
     @State private var sheetMode: SheetMode?
 
     var body: some View {
@@ -26,19 +29,21 @@ struct ScheduleEditorView: View {
             }
         }
         .sheet(item: $sheetMode) { mode in
-            ScheduleFormView(
-                schedule: mode.schedule,
-                onSave: { schedule in
-                    switch mode {
-                    case .add:
-                        coordinator.addSchedule(schedule)
-                    case .edit:
-                        coordinator.updateSchedule(schedule)
-                    }
-                    sheetMode = nil
-                },
-                onCancel: { sheetMode = nil }
-            )
+            LocalizedRoot(store: languageStore) {
+                ScheduleFormView(
+                    schedule: mode.schedule,
+                    onSave: { schedule in
+                        switch mode {
+                        case .add:
+                            coordinator.addSchedule(schedule)
+                        case .edit:
+                            coordinator.updateSchedule(schedule)
+                        }
+                        sheetMode = nil
+                    },
+                    onCancel: { sheetMode = nil }
+                )
+            }
         }
     }
 
@@ -181,14 +186,16 @@ private struct ScheduleRow: View {
             }
             .buttonStyle(.plain)
             .sheet(isPresented: $showDeleteConfirmation) {
-                DeleteConfirmationView(
-                    scheduleName: schedule.name,
-                    onCancel: { showDeleteConfirmation = false },
-                    onDelete: {
-                        showDeleteConfirmation = false
-                        onDelete()
-                    }
-                )
+                LocalizedRoot(store: languageStore) {
+                    DeleteConfirmationView(
+                        scheduleName: schedule.name,
+                        onCancel: { showDeleteConfirmation = false },
+                        onDelete: {
+                            showDeleteConfirmation = false
+                            onDelete()
+                        }
+                    )
+                }
             }
         }
         .padding(.vertical, 4)

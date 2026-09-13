@@ -173,16 +173,20 @@ struct MenuBarView: View {
                 SettingsRowButton(tab: .about)
             } else {
                 Button {
+                    let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .general
                     openSettingsLegacy()
+                    panel?.close()
                 } label: {
                     settingsLabel
                 }
                 .buttonStyle(MenuBarRowStyle())
 
                 Button {
+                    let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .about
                     openSettingsLegacy()
+                    panel?.close()
                 } label: {
                     aboutLabel
                 }
@@ -245,9 +249,14 @@ private struct SettingsRowButton: View {
 
     var body: some View {
         Button {
+            // The MenuBarExtra panel stays up when another window opens, and SwiftUI gives
+            // no handle on it. It is the key window while the click happens, so it is
+            // grabbed here and closed after Settings takes over as key.
+            let panel = NSApp.keyWindow
             coordinator.selectedSettingsTab = tab
             openSettings()
             NSApp.activate(ignoringOtherApps: true)
+            panel?.close()
         } label: {
             if tab == .about {
                 aboutLabel
