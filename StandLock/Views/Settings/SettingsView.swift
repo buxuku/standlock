@@ -31,7 +31,7 @@ struct SettingsView: View {
 private struct SettingsTabBar: View {
     @Binding var selectedTab: AppCoordinator.SettingsTab
 
-    private static let tabs: [(AppCoordinator.SettingsTab, String, String)] = [
+    private static let tabs: [(AppCoordinator.SettingsTab, LocalizedStringKey, String)] = [
         (.general, "General", "gearshape"),
         (.schedules, "Schedules", "calendar.badge.clock"),
         (.detection, "Detection", "eye"),

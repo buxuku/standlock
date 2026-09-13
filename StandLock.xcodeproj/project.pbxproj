@@ -47,6 +47,7 @@
 		D439305E99C8EADDE7F0DE89 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0B4059D699DF8BDF99889 /* AboutView.swift */; };
 		D588F2EB46E9B8124422C5EE /* StatsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B1BE95A60D5294C770AEDE /* StatsFooter.swift */; };
 		D6409DD8838F0ED91DC848C5 /* NextIntervalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33012BFC809E077C2D638165 /* NextIntervalLabel.swift */; };
+		D6924A301B93814466C9327F /* WeekdaySymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF14D6C0FE257CA354FAE8B /* WeekdaySymbols.swift */; };
 		D751E70A3ADA8406061C5A90 /* ManuscriptBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BB0E055C4BD25865AD3EE1 /* ManuscriptBreakView.swift */; };
 		DABDEC6CA937B88679850A3E /* DetectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6E6102A1900D1FAB2A856 /* DetectionSettingsView.swift */; };
 		E390B98931E7EE42E14FF2BD /* ActionArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A68046037D0CAAE70C0F88 /* ActionArea.swift */; };
@@ -74,6 +75,7 @@
 		540564FDDCA36A0411155BC1 /* StandLock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StandLock.entitlements; sourceTree = "<group>"; };
 		5586791BF5D81FC7CE5AE185 /* MediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaController.swift; sourceTree = "<group>"; };
 		6382F8157622B1D11845645E /* PermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsView.swift; sourceTree = "<group>"; };
+		6AF14D6C0FE257CA354FAE8B /* WeekdaySymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaySymbols.swift; sourceTree = "<group>"; };
 		7259326030030D8F49258219 /* QuickSetupStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSetupStepView.swift; sourceTree = "<group>"; };
 		7A85E4C082C8E3C5083ABAEB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		85C5398AE9D97E6B58618468 /* WordmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordmarkView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				512EB234C46341A2816AAE12 /* SettingsView.swift */,
 				303422D10B9C319038D63E32 /* SoftwareUpdate.swift */,
 				0EABC17E13A353DC207277A7 /* StatisticsView.swift */,
+				6AF14D6C0FE257CA354FAE8B /* WeekdaySymbols.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				1D8C2A5E77A5D5D5F9C7EFDC /* StatisticsView.swift in Sources */,
 				D588F2EB46E9B8124422C5EE /* StatsFooter.swift in Sources */,
 				51FC83BD2349C694BF8C11DD /* TimerNumerals.swift in Sources */,
+				D6924A301B93814466C9327F /* WeekdaySymbols.swift in Sources */,
 				742A80C38BAB206209CC4213 /* WelcomeStepView.swift in Sources */,
 				0961DAEECC3F5E489E40FBC0 /* WordmarkView.swift in Sources */,
 			);

@@ -71,7 +71,7 @@ struct MenuBarView: View {
                 Label("Break waiting", systemImage: "pause.circle")
                     .font(.caption)
                     .foregroundStyle(.orange)
-                Text(reason.displayName)
+                Text(LocalizedStringKey(reason.displayName))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
@@ -117,7 +117,7 @@ struct MenuBarView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func statItem(icon: String, value: String, label: String) -> some View {
+    private func statItem(icon: String, value: String, label: LocalizedStringKey) -> some View {
         VStack(spacing: 2) {
             HStack(spacing: 4) {
                 Image(systemName: icon)
@@ -141,9 +141,15 @@ struct MenuBarView: View {
                 Circle()
                     .fill(.green)
                     .frame(width: 6, height: 6)
-                Text(updateObserver.availableVersion.map { "v\($0) available" } ?? "Update available")
-                    .font(.caption)
-                    .foregroundStyle(.green)
+                Group {
+                    if let version = updateObserver.availableVersion {
+                        Text("v\(version) available")
+                    } else {
+                        Text("Update available")
+                    }
+                }
+                .font(.caption)
+                .foregroundStyle(.green)
                 Spacer()
                 Button("Update") {
                     NSApp.activate(ignoringOtherApps: true)

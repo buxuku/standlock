@@ -119,8 +119,8 @@ struct DetectionSettingsView: View {
     }
 
     private func detectionRow(
-        title: String,
-        description: String,
+        title: LocalizedStringKey,
+        description: LocalizedStringKey,
         systemImage: String,
         behavior: Binding<DetectionBehavior>
     ) -> some View {

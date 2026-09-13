@@ -3,6 +3,7 @@ import StandLockCore
 
 struct StatisticsView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
+    @Environment(\.locale) private var locale
     @State private var selectedPeriod: StatsPeriod = .month
     @State private var cachedHeatmap: HeatmapData?
     @State private var cachedStats: AggregateStats = .empty
@@ -62,7 +63,7 @@ struct StatisticsView: View {
         // one is left in place rather than cleared so returning to the tab has nothing to
         // re-render from empty.
         if selectedPeriod == .year {
-            cachedHeatmap = HeatmapData(history: coordinator.breakHistory, referenceDate: now)
+            cachedHeatmap = HeatmapData(history: coordinator.breakHistory, referenceDate: now, locale: locale)
         }
         cachedStats = coordinator.breakHistory.aggregateStats(for: selectedPeriod, referenceDate: now)
     }
@@ -74,7 +75,7 @@ struct StatisticsView: View {
             Spacer()
             Picker("Period", selection: $selectedPeriod) {
                 ForEach(StatsPeriod.allCases) { period in
-                    Text(period.rawValue).tag(period)
+                    Text(LocalizedStringKey(period.rawValue)).tag(period)
                 }
             }
             .pickerStyle(.segmented)
@@ -120,12 +121,11 @@ private func heatmapColor(count: Int, maxCount: Int) -> Color {
     }
 }
 
-private let calendarDayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-
 // MARK: - Year Heatmap View
 
 private struct YearHeatmapView: View {
     let data: HeatmapData
+    @Environment(\.locale) private var locale
     let activeDays: Int
 
     private let cellSize: CGFloat = 11
@@ -215,7 +215,7 @@ private struct YearHeatmapView: View {
         VStack(spacing: cellSpacing) {
             ForEach(0..<7, id: \.self) { row in
                 if row == 0 || row == 2 || row == 4 {
-                    Text(["Mon", "", "Wed", "", "Fri", "", ""][row])
+                    Text(WeekdaySymbols(locale: locale).mondayFirst[row])
                         .font(.system(size: 9)).foregroundStyle(.secondary)
                         .frame(width: labelWidth, height: cellSize, alignment: .trailing)
                 } else {
@@ -243,13 +243,9 @@ private struct YearHeatmapView: View {
 
 private struct MonthCalendarView: View {
     let history: BreakHistory
+    @Environment(\.locale) private var locale
     let activeDays: Int
 
-    private static let monthYearFormatter: DateFormatter = {
-        let f = DateFormatter()
-        f.dateFormat = "MMMM yyyy"
-        return f
-    }()
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
 
     var body: some View {
@@ -272,7 +268,7 @@ private struct MonthCalendarView: View {
             }
 
             LazyVGrid(columns: columns, spacing: 4) {
-                ForEach(calendarDayNames, id: \.self) { name in
+                ForEach(WeekdaySymbols(locale: locale).mondayFirst, id: \.self) { name in
                     Text(name)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
@@ -327,13 +323,14 @@ private struct MonthCalendarView: View {
     }
 
     private func monthYearString(from date: Date) -> String {
-        Self.monthYearFormatter.string(from: date)
+        date.formatted(.dateTime.month(.wide).year().locale(locale))
     }
 }
 
 // MARK: - Week Calendar View
 
 private struct WeekCardsView: View {
+    @Environment(\.locale) private var locale
     let history: BreakHistory
     let activeDays: Int
 
@@ -365,7 +362,7 @@ private struct WeekCardsView: View {
             }
 
             LazyVGrid(columns: columns, spacing: 4) {
-                ForEach(calendarDayNames, id: \.self) { name in
+                ForEach(WeekdaySymbols(locale: locale).mondayFirst, id: \.self) { name in
                     Text(name)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
@@ -406,7 +403,7 @@ private struct WeekCardsView: View {
 
 private struct StatCard: View {
     let icon: String
-    let label: String
+    let label: LocalizedStringKey
     let value: String
     let color: Color
 
@@ -439,8 +436,10 @@ private struct HeatmapData {
     let maxCount: Int
     let todayKey: String
 
-    init(history: BreakHistory, referenceDate: Date) {
+    init(history: BreakHistory, referenceDate: Date, locale: Locale) {
         let calendar = Calendar.current
+        var named = Calendar(identifier: .gregorian)
+        named.locale = locale
         todayKey = DailyBreakRecord.dateKey(from: referenceDate)
 
         var weeksArray: [[HeatmapDay?]] = Array(repeating: Array(repeating: nil, count: 7), count: 53)
@@ -471,7 +470,7 @@ private struct HeatmapData {
             if month != lastMonth {
                 lastMonth = month
                 if col - lastLabelCol >= 3 {
-                    labels[col] = calendar.shortMonthSymbols[month - 1]
+                    labels[col] = named.shortMonthSymbols[month - 1]
                     lastLabelCol = col
                 }
             }

@@ -47,8 +47,8 @@ struct PermissionsView: View {
 }
 
 struct PermissionRow: View {
-    let title: String
-    let description: String
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
     let systemImage: String
     let status: PermissionStatus
     let settingsURLs: [URL]

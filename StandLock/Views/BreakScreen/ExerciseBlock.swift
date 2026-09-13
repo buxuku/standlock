@@ -4,9 +4,12 @@ import StandLockCore
 struct ExerciseBlock: View {
     let exercise: Exercise
     let palette: BreakPalette
+    @EnvironmentObject private var languageStore: LanguageStore
 
     private var titleWithPeriod: String {
-        exercise.title.hasSuffix(".") ? exercise.title : exercise.title + "."
+        // Resolve first: a Turkish title may end in a period where the English one does not.
+        let title = languageStore.string(key: exercise.title)
+        return title.hasSuffix(".") ? title : title + "."
     }
 
     var body: some View {
@@ -18,7 +21,7 @@ struct ExerciseBlock: View {
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: 560)
 
-            Text(exercise.description)
+            Text(LocalizedStringKey(exercise.description))
                 .font(BreakTypography.exerciseBody())
                 .foregroundStyle(palette.inkSoft)
                 .multilineTextAlignment(.center)
