@@ -438,8 +438,7 @@ private struct HeatmapData {
 
     init(history: BreakHistory, referenceDate: Date, locale: Locale) {
         let calendar = Calendar.current
-        var named = Calendar(identifier: .gregorian)
-        named.locale = locale
+        let monthNames = shortMonthSymbols(for: calendar, locale: locale)
         todayKey = DailyBreakRecord.dateKey(from: referenceDate)
 
         var weeksArray: [[HeatmapDay?]] = Array(repeating: Array(repeating: nil, count: 7), count: 53)
@@ -470,7 +469,7 @@ private struct HeatmapData {
             if month != lastMonth {
                 lastMonth = month
                 if col - lastLabelCol >= 3 {
-                    labels[col] = named.shortMonthSymbols[month - 1]
+                    labels[col] = monthNames[month - 1]
                     lastLabelCol = col
                 }
             }
