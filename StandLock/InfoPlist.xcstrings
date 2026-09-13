@@ -10,6 +10,12 @@
             "state": "translated",
             "value": "StandLock uses accessibility to block keyboard and mouse input during breaks in Strict mode."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock, Katı modda molalar sırasında klavye ve fare girdisini engellemek için erişilebilirliği kullanır."
+          }
         }
       }
     },
@@ -22,6 +28,12 @@
             "state": "translated",
             "value": "StandLock reads your calendar to defer breaks during meetings."
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock, toplantılarda molaları ertelemek için takviminizi okur."
+          }
         }
       }
     },
@@ -33,6 +45,12 @@
           "stringUnit": {
             "state": "translated",
             "value": "StandLock reads your calendar to defer breaks during meetings."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock, toplantılarda molaları ertelemek için takviminizi okur."
           }
         }
       }
