@@ -308,6 +308,10 @@ final class AppCoordinator: ObservableObject {
     /// carried one is cancelled just above. Leaving it set made the menu bar report a break in
     /// progress with no overlay on screen -- and kept the quick actions disabled -- until the
     /// next break fired. Reachable by editing a schedule while a break is up.
+    ///
+    /// `nextBreakTime` and `breakScheduledAt` are deliberately left alone: `breakProgressAnchor`
+    /// compares the surviving `nextBreakTime` against the re-armed slot to decide whether the
+    /// interval is the same one. Clearing them here restarts the progress ring on every rebuild.
     private func clearActiveBreakState() {
         isBreakActive = false
         currentBreakRemaining = 0
@@ -355,8 +359,16 @@ final class AppCoordinator: ObservableObject {
         switch event {
         case .nextBreakScheduled(let date):
             deferralReason = nil
+            // Not always `Date()`: a rebuilt coordinator re-arms the slot it inherited, and
+            // re-anchoring on that collapses the interval the ring measures to whatever is left
+            // of it -- editing a schedule twenty seconds before a break emptied the menu bar
+            // icon and refilled it over those twenty seconds.
+            breakScheduledAt = breakProgressAnchor(
+                existingAnchor: breakScheduledAt,
+                existingNextBreak: nextBreakTime,
+                newNextBreak: date
+            )
             nextBreakTime = date
-            breakScheduledAt = Date()
             recalculateProgress()
             updateMenuBarTimer()
             if menuBarTimerText != nil {

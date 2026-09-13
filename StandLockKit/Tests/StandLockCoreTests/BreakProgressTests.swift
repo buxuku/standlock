@@ -185,4 +185,47 @@ struct BreakProgressTests {
             isBreakActive: false, isPaused: false, hasScheduledBreak: true
         ) == "0:00")
     }
+
+    // MARK: - breakProgressAnchor
+
+    @Test func rearmedSlotKeepsTheOldAnchor() {
+        let anchor = Date()
+        let slot = anchor.addingTimeInterval(60)
+        let now = anchor.addingTimeInterval(40)
+        let result = breakProgressAnchor(
+            existingAnchor: anchor, existingNextBreak: slot, newNextBreak: slot, now: now
+        )
+        #expect(result == anchor)
+        // The whole point: the ring still reads two thirds through the interval, not zero.
+        let progress = calculateBreakProgress(
+            scheduledAt: result, nextBreak: slot, isBreakActive: false, now: now
+        )
+        #expect(abs(progress - 2.0 / 3.0) < 0.001)
+    }
+
+    @Test func newSlotReanchorsToNow() {
+        let anchor = Date()
+        let oldSlot = anchor.addingTimeInterval(60)
+        let now = anchor.addingTimeInterval(40)
+        let newSlot = now.addingTimeInterval(60)
+        #expect(breakProgressAnchor(
+            existingAnchor: anchor, existingNextBreak: oldSlot, newNextBreak: newSlot, now: now
+        ) == now)
+    }
+
+    @Test func missingAnchorReanchorsToNow() {
+        let now = Date()
+        let slot = now.addingTimeInterval(60)
+        #expect(breakProgressAnchor(
+            existingAnchor: nil, existingNextBreak: slot, newNextBreak: slot, now: now
+        ) == now)
+    }
+
+    @Test func missingPreviousSlotReanchorsToNow() {
+        let now = Date()
+        #expect(breakProgressAnchor(
+            existingAnchor: now.addingTimeInterval(-40), existingNextBreak: nil,
+            newNextBreak: now.addingTimeInterval(60), now: now
+        ) == now)
+    }
 }

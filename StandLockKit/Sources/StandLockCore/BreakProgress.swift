@@ -56,3 +56,23 @@ public enum ProgressDisplayBranch: Sendable, Equatable {
         }
     }
 }
+
+/// The anchor `calculateBreakProgress` measures the interval from.
+///
+/// A rebuilt coordinator re-arms the slot it inherited rather than computing a fresh one, so
+/// re-anchoring on that re-arm shrinks the measured interval down to whatever is left of it --
+/// the menu bar ring emptied and refilled at speed on every schedule edit. Same for a window
+/// -anchored slot re-yielded on wake or unlock: the target has not moved, so neither should the
+/// anchor. Only a slot that actually differs from the armed one starts a new interval.
+///
+/// Depends on the caller keeping its previous `nextBreak` across a coordinator teardown --
+/// `AppCoordinator.clearActiveBreakState` deliberately leaves it alone for this reason.
+public func breakProgressAnchor(
+    existingAnchor: Date?,
+    existingNextBreak: Date?,
+    newNextBreak: Date,
+    now: Date = Date()
+) -> Date {
+    guard let existingAnchor, existingNextBreak == newNextBreak else { return now }
+    return existingAnchor
+}
