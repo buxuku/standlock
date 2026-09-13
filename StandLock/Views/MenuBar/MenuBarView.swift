@@ -176,7 +176,7 @@ struct MenuBarView: View {
                     let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .general
                     openSettingsLegacy()
-                    panel?.close()
+                    dismissMenuBarPanel(panel)
                 } label: {
                     settingsLabel
                 }
@@ -186,7 +186,7 @@ struct MenuBarView: View {
                     let panel = NSApp.keyWindow
                     coordinator.selectedSettingsTab = .about
                     openSettingsLegacy()
-                    panel?.close()
+                    dismissMenuBarPanel(panel)
                 } label: {
                     aboutLabel
                 }
@@ -251,12 +251,12 @@ private struct SettingsRowButton: View {
         Button {
             // The MenuBarExtra panel stays up when another window opens, and SwiftUI gives
             // no handle on it. It is the key window while the click happens, so it is
-            // grabbed here and closed after Settings takes over as key.
+            // grabbed here and hidden after Settings takes over as key.
             let panel = NSApp.keyWindow
             coordinator.selectedSettingsTab = tab
             openSettings()
             NSApp.activate(ignoringOtherApps: true)
-            panel?.close()
+            dismissMenuBarPanel(panel)
         } label: {
             if tab == .about {
                 aboutLabel
@@ -266,6 +266,19 @@ private struct SettingsRowButton: View {
         }
         .buttonStyle(MenuBarRowStyle())
     }
+}
+
+/// Hides the MenuBarExtra panel captured before another window was opened.
+///
+/// `orderOut` rather than `close`: the panel hosts SwiftUI through an NSHostingView,
+/// and closing one of those deadlocks the main thread or frees it out from under the
+/// hosting view. The identity check covers the case where Settings was already open
+/// and key when the row was clicked -- the captured window is then the Settings window
+/// itself, which must not be hidden.
+@MainActor
+private func dismissMenuBarPanel(_ panel: NSWindow?) {
+    guard let panel, panel !== NSApp.keyWindow else { return }
+    panel.orderOut(nil)
 }
 
 struct MenuBarRowStyle: ButtonStyle {
