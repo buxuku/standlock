@@ -45,6 +45,7 @@ final class AppCoordinator: ObservableObject {
     @Published var breakHistory: BreakHistory = BreakHistory()
 
     let permissionChecker = PermissionChecker()
+    let languageStore = LanguageStore()
 
     private var coordinator: BreakCoordinator?
     /// Survives the coordinator-less interval between a teardown and the next build.
@@ -57,7 +58,7 @@ final class AppCoordinator: ObservableObject {
     /// next morning restores yesterday's exhausted cap.
     private var carriedEnforcementDay = Date()
     private var calendarDetector: CalendarDetector?
-    private let overlayController = OverlayWindowController()
+    private let overlayController: OverlayWindowController
     private var eventListenerTask: Task<Void, Never>?
     private var progressTimer: Task<Void, Never>?
     private var loadedExercises: [Exercise] = []
@@ -66,6 +67,7 @@ final class AppCoordinator: ObservableObject {
     private var permissionSyncCancellable: AnyCancellable?
 
     init() {
+        overlayController = OverlayWindowController(languageStore: languageStore)
         loadExercises()
         loadData()
         syncPreferencesWithPermissions()
@@ -537,9 +539,11 @@ final class AppCoordinator: ObservableObject {
         window.titleVisibility = .hidden
         window.isReleasedWhenClosed = false
         window.contentView = NSHostingView(
-            rootView: OnboardingView()
-                .environmentObject(self)
-                .environmentObject(permissionChecker)
+            rootView: LocalizedRoot(store: languageStore) {
+                OnboardingView()
+                    .environmentObject(self)
+                    .environmentObject(self.permissionChecker)
+            }
         )
         window.center()
 

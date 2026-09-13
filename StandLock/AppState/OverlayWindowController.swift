@@ -10,6 +10,7 @@ final class OverlayWindowController: LockPresenting {
     private var screenObserver: NSObjectProtocol?
     private var focusTimer: Timer?
     private let mediaController = MediaController()
+    private let languageStore: LanguageStore
     private(set) var isShowing: Bool = false
 
     private var currentLevel: DisciplineLevel?
@@ -26,7 +27,9 @@ final class OverlayWindowController: LockPresenting {
     var onComplete: (() -> Void)?
     var onEscape: (() -> Void)?
 
-    nonisolated init() {}
+    nonisolated init(languageStore: LanguageStore) {
+        self.languageStore = languageStore
+    }
 
     func showOverlay(
         level: DisciplineLevel, duration: TimeInterval,
@@ -61,7 +64,7 @@ final class OverlayWindowController: LockPresenting {
                 onEscape: { [weak self] in self?.handleEscape() },
                 onComplete: { [weak self] in self?.handleComplete() }
             )
-            window.setContent(contentView)
+            window.setContent(LocalizedRoot(store: languageStore) { contentView })
             window.orderFrontRegardless()
             overlayWindows.append(window)
         }
