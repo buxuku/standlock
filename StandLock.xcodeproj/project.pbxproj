@@ -23,6 +23,7 @@
 		4F9FCDEAA10641DE215D0663 /* StandLockCore in Frameworks */ = {isa = PBXBuildFile; productRef = 72A6FAE1CB69E8D0DE33B641 /* StandLockCore */; };
 		4FCB9EE133A8300CC965E687 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81F2ED91290AD26CB5B672E /* AppCoordinator.swift */; };
 		51FC83BD2349C694BF8C11DD /* TimerNumerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF9C8AFAF33310B45445B2 /* TimerNumerals.swift */; };
+		525A004E07BB31DB91651F08 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = CD5052FB7ADFF1C72A819672 /* InfoPlist.xcstrings */; };
 		5AC2660FDBB66F4B523FC1E2 /* ScheduleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9B9151DFEA710D1211B70 /* ScheduleEditorView.swift */; };
 		676678D8A09155A2AEEFA18C /* DisciplineLevelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A866831BDFD42E80353C80D8 /* DisciplineLevelPicker.swift */; };
 		6AF974084F51158A71D9EA47 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512EB234C46341A2816AAE12 /* SettingsView.swift */; };
@@ -37,6 +38,7 @@
 		918E275316F96D0940D30FE1 /* Coordination in Frameworks */ = {isa = PBXBuildFile; productRef = B92CC5F67D1B761AB8B497AF /* Coordination */; };
 		939B26A31A39AED7A89760CE /* PermissionsStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5AA3BD882ECB78BB3099D /* PermissionsStepView.swift */; };
 		9D77F7B7F12048E4399B8B25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD06AD45022B6D147E26C4A6 /* AppDelegate.swift */; };
+		A6C60C181FF99EA8F84AA488 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EE28EF9957F31C9560EE4439 /* Localizable.xcstrings */; };
 		AB84ADC15C8263AFD995E8B5 /* BreakTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FB6FBBABD55844628B8DA3 /* BreakTypography.swift */; };
 		AD18B90CCF07CB58B8312CDB /* Locking in Frameworks */ = {isa = PBXBuildFile; productRef = 3F23054B7AE15E61C38C884E /* Locking */; };
 		B0845F2F14770C95395FBA5F /* ScheduleFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3EDA84FE380ED1AF6CE8A /* ScheduleFormView.swift */; };
@@ -84,6 +86,7 @@
 		B387012391C6BC0360436B50 /* WelcomeStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeStepView.swift; sourceTree = "<group>"; };
 		C2FA6CDE8744BCE072FEDAF9 /* MenuBarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIcon.swift; sourceTree = "<group>"; };
 		C5BBDBF97CFAA5FF490CBD00 /* BreakOverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakOverlayWindow.swift; sourceTree = "<group>"; };
+		CD5052FB7ADFF1C72A819672 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		DC6421DB3A1D7F3131B3B7F4 /* StandLockKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = StandLockKit; path = StandLockKit; sourceTree = SOURCE_ROOT; };
 		DD06AD45022B6D147E26C4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEAF9C8AFAF33310B45445B2 /* TimerNumerals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerNumerals.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		E2436E0F3F20FE12F920ADE7 /* QuickActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickActionsView.swift; sourceTree = "<group>"; };
 		E2E6E6102A1900D1FAB2A856 /* DetectionSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionSettingsView.swift; sourceTree = "<group>"; };
 		E5A68046037D0CAAE70C0F88 /* ActionArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionArea.swift; sourceTree = "<group>"; };
+		EE28EF9957F31C9560EE4439 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		FE0E2C708B760F809144B756 /* PermissionChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +184,8 @@
 				DD06AD45022B6D147E26C4A6 /* AppDelegate.swift */,
 				94B7BAAC1837524EF3DD6B90 /* Assets.xcassets */,
 				42215A75B39382916D51D614 /* Info.plist */,
+				CD5052FB7ADFF1C72A819672 /* InfoPlist.xcstrings */,
+				EE28EF9957F31C9560EE4439 /* Localizable.xcstrings */,
 				540564FDDCA36A0411155BC1 /* StandLock.entitlements */,
 				B1524D749BB78A875E5FD51F /* StandLockApp.swift */,
 				85FCDB623AA2D87A6776A720 /* AppState */,
@@ -309,6 +315,8 @@
 			files = (
 				2200215D71D0CABD7DD45E92 /* Assets.xcassets in Resources */,
 				6F9C00664AAD42633900A642 /* Exercises.json in Resources */,
+				525A004E07BB31DB91651F08 /* InfoPlist.xcstrings in Resources */,
+				A6C60C181FF99EA8F84AA488 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,13 +455,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.3.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
 			};
@@ -513,6 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 0.3.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -520,7 +532,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
 			};

@@ -1,0 +1,42 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "NSAccessibilityUsageDescription": {
+      "comment": "Permission prompt shown by macOS.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock uses accessibility to block keyboard and mouse input during breaks in Strict mode."
+          }
+        }
+      }
+    },
+    "NSCalendarsFullAccessUsageDescription": {
+      "comment": "Permission prompt shown by macOS.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock reads your calendar to defer breaks during meetings."
+          }
+        }
+      }
+    },
+    "NSCalendarsUsageDescription": {
+      "comment": "Permission prompt shown by macOS.",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "StandLock reads your calendar to defer breaks during meetings."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
