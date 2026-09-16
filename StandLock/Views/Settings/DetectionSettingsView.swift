@@ -50,6 +50,18 @@ struct DetectionSettingsView: View {
                         in: 1...15
                     )
                     .padding(.leading, 24)
+
+                    Picker("Calendars", selection: $coordinator.preferences.calendarSelectionMode) {
+                        Text("All calendars").tag(CalendarSelectionMode.all)
+                        Text("Specific calendars").tag(CalendarSelectionMode.selected)
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                    .padding(.leading, 24)
+
+                    if coordinator.preferences.calendarSelectionMode == .selected {
+                        calendarSelection
+                    }
                 }
 
                 Toggle(isOn: $coordinator.preferences.screenSharingDetectionEnabled) {
@@ -108,6 +120,16 @@ struct DetectionSettingsView: View {
         .onChange(of: coordinator.preferences) { _ in
             coordinator.savePreferences()
         }
+        .onChange(of: coordinator.preferences.calendarSelectionMode) { mode in
+            // Pre-check every calendar when the choice flips to a specific selection, so it
+            // starts as a no-op the user then narrows down. Leaving this in the list's task
+            // would re-tick everything each time the Settings tab is reopened.
+            guard mode == .selected,
+                  coordinator.preferences.selectedCalendarIdentifiers.isEmpty else { return }
+            coordinator.refreshAvailableCalendars()
+            coordinator.preferences.selectedCalendarIdentifiers =
+                coordinator.availableCalendars.map(\.id)
+        }
         .alert("Calendar Permission Required", isPresented: $showCalendarPermissionAlert) {
             Button("Open System Settings") {
                 permissionChecker.openSystemSettings(for: .calendar)
@@ -145,5 +167,53 @@ struct DetectionSettingsView: View {
             .labelsHidden()
             .padding(.leading, 24)
         }
+    }
+
+    @ViewBuilder
+    private var calendarSelection: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Only checked calendars defer breaks")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            if coordinator.availableCalendars.isEmpty {
+                Text("No calendars found")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
+                ForEach(coordinator.availableCalendars) { calendar in
+                    Toggle(isOn: calendarBinding(for: calendar)) {
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text(verbatim: calendar.title)
+                                .lineLimit(1)
+                                .truncationMode(.middle)
+                            if !calendar.source.isEmpty {
+                                Text(verbatim: calendar.source)
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                    .toggleStyle(.checkbox)
+                }
+            }
+        }
+        .padding(.leading, 24)
+        .task { coordinator.refreshAvailableCalendars() }
+    }
+
+    private func calendarBinding(for calendar: CalendarInfo) -> Binding<Bool> {
+        Binding(
+            get: { coordinator.preferences.selectedCalendarIdentifiers.contains(calendar.id) },
+            set: { selected in
+                var identifiers = coordinator.preferences.selectedCalendarIdentifiers
+                if selected {
+                    if !identifiers.contains(calendar.id) { identifiers.append(calendar.id) }
+                } else {
+                    identifiers.removeAll { $0 == calendar.id }
+                }
+                coordinator.preferences.selectedCalendarIdentifiers = identifiers
+            }
+        )
     }
 }
