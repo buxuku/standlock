@@ -146,10 +146,12 @@ final class PermissionChecker: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            guard let self else { return }
-            let transitions = self.refreshStatusAndDetectTransitions()
-            self.updateInputMonitoringProbe()
-            self.handleTransitions(transitions)
+            MainActor.assumeIsolated {
+                guard let self else { return }
+                let transitions = self.refreshStatusAndDetectTransitions()
+                self.updateInputMonitoringProbe()
+                self.handleTransitions(transitions)
+            }
         }
 
         defer { NotificationCenter.default.removeObserver(observer) }
