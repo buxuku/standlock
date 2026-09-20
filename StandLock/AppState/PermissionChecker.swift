@@ -312,10 +312,16 @@ final class PermissionChecker: ObservableObject {
     }
 
     private func requestCalendarAccess() async -> Bool {
-        if #available(macOS 14, *) {
-            return (try? await eventStore.requestFullAccessToEvents()) ?? false
-        } else {
-            return (try? await eventStore.requestAccess(to: .event)) ?? false
+        await withCheckedContinuation { continuation in
+            if #available(macOS 14, *) {
+                eventStore.requestFullAccessToEvents { granted, _ in
+                    continuation.resume(returning: granted)
+                }
+            } else {
+                eventStore.requestAccess(to: .event) { granted, _ in
+                    continuation.resume(returning: granted)
+                }
+            }
         }
     }
 
