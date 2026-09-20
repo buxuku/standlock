@@ -141,18 +141,18 @@ final class PermissionChecker: ObservableObject {
         refreshStatus()
         updateInputMonitoringProbe()
 
-        let activationTask = Task { @MainActor [weak self] in
-            for await _ in NotificationCenter.default.notifications(
-                named: NSApplication.didBecomeActiveNotification
-            ) {
-                guard let self else { return }
-                let transitions = self.refreshStatusAndDetectTransitions()
-                self.updateInputMonitoringProbe()
-                self.handleTransitions(transitions)
-            }
+        let observer = NotificationCenter.default.addObserver(
+            forName: NSApplication.didBecomeActiveNotification,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            guard let self else { return }
+            let transitions = self.refreshStatusAndDetectTransitions()
+            self.updateInputMonitoringProbe()
+            self.handleTransitions(transitions)
         }
 
-        defer { activationTask.cancel() }
+        defer { NotificationCenter.default.removeObserver(observer) }
 
         while !Task.isCancelled {
             try? await Task.sleep(for: .seconds(2))

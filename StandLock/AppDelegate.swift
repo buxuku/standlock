@@ -1,6 +1,7 @@
 import AppKit
 @preconcurrency import Sparkle
 
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     let updateObserver = UpdateObserver()
     let updaterController: SPUStandardUpdaterController

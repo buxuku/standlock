@@ -218,6 +218,7 @@ struct MenuBarView: View {
     }
 }
 
+@MainActor
 private var settingsLabel: some View {
     HStack(spacing: 8) {
         Image(systemName: "gearshape")
@@ -231,6 +232,7 @@ private var settingsLabel: some View {
     }
 }
 
+@MainActor
 private var aboutLabel: some View {
     HStack(spacing: 8) {
         Image(systemName: "info.circle")

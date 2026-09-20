@@ -448,9 +448,9 @@ private struct CrateOpeningDismissView: View {
         switch landed {
         case nil:
             return headerMessages[min(currentAttempt, headerMessages.count - 1)]
-        case false:
+        case .some(false):
             return loseMessages[min(currentAttempt, loseMessages.count - 1)]
-        case true:
+        case .some(true):
             return "Ugh. Fine, go."
         }
     }
