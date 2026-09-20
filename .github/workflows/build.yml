@@ -1,0 +1,54 @@
+name: Build & Package
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - "v*"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-build:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run StandLockKit tests
+        run: swift test --package-path StandLockKit
+
+      - name: Build StandLock App
+        run: |
+          xcodebuild -project StandLock.xcodeproj \
+            -scheme StandLock \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_ENTITLEMENTS="" \
+            CODE_SIGNING_ALLOWED=NO \
+            -derivedDataPath .build/DerivedData \
+            build
+
+      - name: Package DMG and ZIP
+        run: |
+          mkdir -p .build/dmg_folder
+          cp -R ".build/DerivedData/Build/Products/Release/StandLock.app" .build/dmg_folder/
+          ln -s /Applications .build/dmg_folder/Applications
+          hdiutil create -volname "StandLock" -srcfolder .build/dmg_folder -ov -format UDZO "StandLock.dmg"
+          ditto -c -k --keepParent ".build/DerivedData/Build/Products/Release/StandLock.app" "StandLock.zip"
+          rm -rf .build/dmg_folder
+
+      - name: Upload Installer Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: StandLock-Installer
+          path: |
+            StandLock.dmg
+            StandLock.zip

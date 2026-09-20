@@ -8,6 +8,8 @@ public extension Notification.Name {
 }
 
 public final class EventTapController: @unchecked Sendable {
+    private static let keyCodeK: Int64 = 40 // kVK_ANSI_K
+
     private var eventTap: CFMachPort?
     private var runLoopSource: CFRunLoopSource?
     public private(set) var isActive: Bool = false
@@ -69,6 +71,7 @@ public final class EventTapController: @unchecked Sendable {
 
     public func stop() {
         cancelHoldTimer()
+        escapeDetector.reset()
         if let source = runLoopSource {
             CFRunLoopRemoveSource(CFRunLoopGetMain(), source, .commonModes)
         }
@@ -90,31 +93,52 @@ public final class EventTapController: @unchecked Sendable {
             return Unmanaged.passUnretained(event)
         }
 
+        let wasHolding = escapeDetector.isHolding
+
         if type == .flagsChanged {
             let flags = event.flags
-            let wasHolding = escapeDetector.isHolding
             escapeDetector.flagsChanged(
                 controlDown: flags.contains(.maskControl),
                 optionDown: flags.contains(.maskAlternate),
                 commandDown: flags.contains(.maskCommand),
                 at: Date()
             )
+            processHoldTransition(wasHolding: wasHolding)
             if escapeDetector.isEscapeTriggered(at: Date()) {
                 cancelHoldTimer()
                 onEscapeTriggered()
                 return Unmanaged.passUnretained(event)
             }
-
-            if escapeDetector.isHolding && !wasHolding {
-                startHoldTimer()
-                NotificationCenter.default.post(name: .escapeHoldStarted, object: nil)
-            } else if !escapeDetector.isHolding && wasHolding {
-                cancelHoldTimer()
-                NotificationCenter.default.post(name: .escapeHoldEnded, object: nil)
+        } else if type == .keyDown {
+            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
+            if keyCode == Self.keyCodeK {
+                escapeDetector.keyChanged(kDown: true, at: Date())
+                processHoldTransition(wasHolding: wasHolding)
+                if escapeDetector.isEscapeTriggered(at: Date()) {
+                    cancelHoldTimer()
+                    onEscapeTriggered()
+                    return Unmanaged.passUnretained(event)
+                }
+            }
+        } else if type == .keyUp {
+            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
+            if keyCode == Self.keyCodeK {
+                escapeDetector.keyChanged(kDown: false, at: Date())
+                processHoldTransition(wasHolding: wasHolding)
             }
         }
 
         return isBlocking ? nil : Unmanaged.passUnretained(event)
+    }
+
+    private func processHoldTransition(wasHolding: Bool) {
+        if escapeDetector.isHolding && !wasHolding {
+            startHoldTimer()
+            NotificationCenter.default.post(name: .escapeHoldStarted, object: nil)
+        } else if !escapeDetector.isHolding && wasHolding {
+            cancelHoldTimer()
+            NotificationCenter.default.post(name: .escapeHoldEnded, object: nil)
+        }
     }
 
     private func startHoldTimer() {
