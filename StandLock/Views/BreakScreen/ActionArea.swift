@@ -1564,8 +1564,6 @@ private struct KeyComboDismissView: View {
                 keycap("⌃", active: holdingKeys)
                 keycap("⌥", active: holdingKeys)
                 keycap("⌘", active: holdingKeys)
-                keycap("⇧", active: holdingKeys)
-                keycap("T", active: holdingKeys)
                 Text("for \(Int(holdDuration)) seconds to exit.")
                     .font(BreakTypography.label(size: 13))
                     .foregroundStyle(palette.inkSoft)
