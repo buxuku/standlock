@@ -7,7 +7,8 @@ public struct EscapeDetector: Sendable {
     public private(set) var isControlDown: Bool = false
     public private(set) var isOptionDown: Bool = false
     public private(set) var isCommandDown: Bool = false
-    public private(set) var isKDown: Bool = false
+    public private(set) var isShiftDown: Bool = false
+    public private(set) var isTDown: Bool = false
 
     public init(requiredDuration: TimeInterval = 10.0) {
         self.requiredDuration = requiredDuration
@@ -15,33 +16,35 @@ public struct EscapeDetector: Sendable {
 
     public mutating func flagsChanged(
         controlDown: Bool, optionDown: Bool,
-        commandDown: Bool, at time: Date
+        commandDown: Bool, shiftDown: Bool, at time: Date
     ) {
         isControlDown = controlDown
         isOptionDown = optionDown
         isCommandDown = commandDown
+        isShiftDown = shiftDown
         updateHolding(at: time)
     }
 
-    public mutating func keyChanged(kDown: Bool, at time: Date) {
-        isKDown = kDown
+    public mutating func keyChanged(tDown: Bool, at time: Date) {
+        isTDown = tDown
         updateHolding(at: time)
     }
 
     public mutating func stateChanged(
         controlDown: Bool, optionDown: Bool,
-        commandDown: Bool, kDown: Bool,
+        commandDown: Bool, shiftDown: Bool, tDown: Bool,
         at time: Date
     ) {
         isControlDown = controlDown
         isOptionDown = optionDown
         isCommandDown = commandDown
-        isKDown = kDown
+        isShiftDown = shiftDown
+        isTDown = tDown
         updateHolding(at: time)
     }
 
     private mutating func updateHolding(at time: Date) {
-        let allHeld = isControlDown && isOptionDown && isCommandDown && isKDown
+        let allHeld = isControlDown && isOptionDown && isCommandDown && isShiftDown && isTDown
         if allHeld && !isHolding {
             holdStartTime = time
             isHolding = true
@@ -62,6 +65,7 @@ public struct EscapeDetector: Sendable {
         isControlDown = false
         isOptionDown = false
         isCommandDown = false
-        isKDown = false
+        isShiftDown = false
+        isTDown = false
     }
 }

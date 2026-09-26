@@ -8,7 +8,7 @@ public extension Notification.Name {
 }
 
 public final class EventTapController: @unchecked Sendable {
-    private static let keyCodeK: Int64 = 40 // kVK_ANSI_K
+    private static let keyCodeT: Int64 = 17 // kVK_ANSI_T
 
     private var eventTap: CFMachPort?
     private var runLoopSource: CFRunLoopSource?
@@ -101,6 +101,7 @@ public final class EventTapController: @unchecked Sendable {
                 controlDown: flags.contains(.maskControl),
                 optionDown: flags.contains(.maskAlternate),
                 commandDown: flags.contains(.maskCommand),
+                shiftDown: flags.contains(.maskShift),
                 at: Date()
             )
             processHoldTransition(wasHolding: wasHolding)
@@ -111,8 +112,8 @@ public final class EventTapController: @unchecked Sendable {
             }
         } else if type == .keyDown {
             let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
-            if keyCode == Self.keyCodeK {
-                escapeDetector.keyChanged(kDown: true, at: Date())
+            if keyCode == Self.keyCodeT {
+                escapeDetector.keyChanged(tDown: true, at: Date())
                 processHoldTransition(wasHolding: wasHolding)
                 if escapeDetector.isEscapeTriggered(at: Date()) {
                     cancelHoldTimer()
@@ -122,8 +123,8 @@ public final class EventTapController: @unchecked Sendable {
             }
         } else if type == .keyUp {
             let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
-            if keyCode == Self.keyCodeK {
-                escapeDetector.keyChanged(kDown: false, at: Date())
+            if keyCode == Self.keyCodeT {
+                escapeDetector.keyChanged(tDown: false, at: Date())
                 processHoldTransition(wasHolding: wasHolding)
             }
         }

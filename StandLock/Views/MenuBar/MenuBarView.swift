@@ -192,23 +192,6 @@ struct MenuBarView: View {
                 }
                 .buttonStyle(MenuBarRowStyle())
             }
-
-            Button {
-                NSApp.terminate(nil)
-            } label: {
-                HStack(spacing: 8) {
-                    Image(systemName: "power")
-                        .frame(width: 18)
-                        .foregroundStyle(.secondary)
-                    Text("Quit StandLock")
-                    Spacer()
-                    Text("\u{2318}Q")
-                        .font(.caption)
-                        .foregroundStyle(.tertiary)
-                }
-            }
-            .buttonStyle(MenuBarRowStyle())
-            .disabled(coordinator.isBreakActive)
         }
     }
 
