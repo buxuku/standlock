@@ -5,6 +5,19 @@ struct MenuBarView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @EnvironmentObject private var updateObserver: UpdateObserver
 
+    /// Whether the reveal key is held while the panel is open. Skip, Pause and Settings stay
+    /// out of the panel until it is.
+    @State private var revealed = false
+
+    private var actions: MenuBarActions {
+        MenuBarActions(isPaused: coordinator.isPaused, revealed: revealed)
+    }
+
+    private var showsQuickActions: Bool {
+        actions.resume || actions.skipNextBreak || actions.pause
+            || coordinator.schedules.contains(where: \.isEnabled)
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
@@ -16,18 +29,23 @@ struct MenuBarView: View {
             .padding(.horizontal, 4)
             .padding(.bottom, 10)
 
-            Divider()
-                .padding(.vertical, 6)
+            if showsQuickActions {
+                Divider()
+                    .padding(.vertical, 6)
 
-            QuickActionsView()
+                QuickActionsView(actions: actions)
+            }
 
-            Divider()
-                .padding(.vertical, 6)
+            if actions.settings {
+                Divider()
+                    .padding(.vertical, 6)
 
-            bottomActions
+                bottomActions
+            }
         }
         .padding(12)
         .frame(width: 280)
+        .background(RevealKeyReader(isHeld: $revealed))
     }
 
     // MARK: - Header

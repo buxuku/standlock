@@ -6,13 +6,19 @@ struct QuickActionsView: View {
     @EnvironmentObject private var checker: PermissionChecker
     @EnvironmentObject private var languageStore: LanguageStore
 
+    let actions: MenuBarActions
+
     private var activeSchedule: Schedule? {
         coordinator.schedules.first(where: \.isEnabled)
     }
 
+    private var hasRows: Bool {
+        actions.resume || actions.skipNextBreak || actions.pause
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if coordinator.isPaused {
+            if actions.resume {
                 Button {
                     coordinator.resumeSchedule()
                 } label: {
@@ -25,7 +31,9 @@ struct QuickActionsView: View {
                     }
                 }
                 .buttonStyle(MenuBarRowStyle())
-            } else {
+            }
+
+            if actions.skipNextBreak {
                 Button {
                     coordinator.skipNextBreak()
                 } label: {
@@ -39,7 +47,9 @@ struct QuickActionsView: View {
                 }
                 .buttonStyle(MenuBarRowStyle())
                 .disabled(coordinator.schedules.isEmpty || coordinator.isBreakActive)
+            }
 
+            if actions.pause {
                 Button {
                     showPauseMenu()
                 } label: {
@@ -60,7 +70,7 @@ struct QuickActionsView: View {
 
             if let schedule = activeSchedule {
                 scheduleInfo(schedule)
-                    .padding(.top, 4)
+                    .padding(.top, hasRows ? 4 : 0)
             }
         }
     }
