@@ -8,8 +8,6 @@ public extension Notification.Name {
 }
 
 public final class EventTapController: @unchecked Sendable {
-    private static let keyCodeT: Int64 = 17 // kVK_ANSI_T
-
     private var eventTap: CFMachPort?
     private var runLoopSource: CFRunLoopSource?
     public private(set) var isActive: Bool = false
@@ -88,48 +86,51 @@ public final class EventTapController: @unchecked Sendable {
     func handleEvent(
         proxy: CGEventTapProxy, type: CGEventType, event: CGEvent
     ) -> Unmanaged<CGEvent>? {
+        let wasHolding = escapeDetector.isHolding
+
         if type == .tapDisabledByTimeout {
             if let tap = eventTap { CGEvent.tapEnable(tap: tap, enable: true) }
+            // Releases can fall in the gap while the tap is off. Forget what was held, or a key
+            // that is no longer down would block the escape for the rest of the break.
+            escapeDetector.reset()
+            processHoldTransition(wasHolding: wasHolding)
             return Unmanaged.passUnretained(event)
         }
 
-        let wasHolding = escapeDetector.isHolding
+        let now = Date()
+        switch type {
+        case .flagsChanged:
+            escapeDetector.flagsChanged(Self.modifiers(from: event.flags), at: now)
+        case .keyDown:
+            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
+            escapeDetector.keyChanged(keyCode: keyCode, isDown: true, at: now)
+        case .keyUp:
+            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
+            escapeDetector.keyChanged(keyCode: keyCode, isDown: false, at: now)
+        default:
+            return isBlocking ? nil : Unmanaged.passUnretained(event)
+        }
 
-        if type == .flagsChanged {
-            let flags = event.flags
-            escapeDetector.flagsChanged(
-                controlDown: flags.contains(.maskControl),
-                optionDown: flags.contains(.maskAlternate),
-                commandDown: flags.contains(.maskCommand),
-                shiftDown: flags.contains(.maskShift),
-                at: Date()
-            )
-            processHoldTransition(wasHolding: wasHolding)
-            if escapeDetector.isEscapeTriggered(at: Date()) {
-                cancelHoldTimer()
-                onEscapeTriggered()
-                return Unmanaged.passUnretained(event)
-            }
-        } else if type == .keyDown {
-            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
-            if keyCode == Self.keyCodeT {
-                escapeDetector.keyChanged(tDown: true, at: Date())
-                processHoldTransition(wasHolding: wasHolding)
-                if escapeDetector.isEscapeTriggered(at: Date()) {
-                    cancelHoldTimer()
-                    onEscapeTriggered()
-                    return Unmanaged.passUnretained(event)
-                }
-            }
-        } else if type == .keyUp {
-            let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
-            if keyCode == Self.keyCodeT {
-                escapeDetector.keyChanged(tDown: false, at: Date())
-                processHoldTransition(wasHolding: wasHolding)
-            }
+        processHoldTransition(wasHolding: wasHolding)
+        if type != .keyUp, escapeDetector.isEscapeTriggered(at: now) {
+            cancelHoldTimer()
+            onEscapeTriggered()
+            return Unmanaged.passUnretained(event)
         }
 
         return isBlocking ? nil : Unmanaged.passUnretained(event)
+    }
+
+    /// Caps Lock is left out on purpose. It is a lock that stays on, not a key being held, and
+    /// counting it would stop the escape from working for as long as it is on.
+    static func modifiers(from flags: CGEventFlags) -> EscapeDetector.Modifiers {
+        var modifiers: EscapeDetector.Modifiers = []
+        if flags.contains(.maskControl) { modifiers.insert(.control) }
+        if flags.contains(.maskAlternate) { modifiers.insert(.option) }
+        if flags.contains(.maskCommand) { modifiers.insert(.command) }
+        if flags.contains(.maskShift) { modifiers.insert(.shift) }
+        if flags.contains(.maskSecondaryFn) { modifiers.insert(.function) }
+        return modifiers
     }
 
     private func processHoldTransition(wasHolding: Bool) {
